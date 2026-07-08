@@ -1,0 +1,319 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "18538e35-2692-4896-b329-a5c7158139ad",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": null,
+          "new_status": "Ready for Next Steps"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "NOTIFY_TICKET_RESOURCE",
+      "id": "2cd62a0c-68ce-414a-bb74-430270951650",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "notification_channel": "Teams",
+        "use_custom_instructions": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ASSIGN_TICKET",
+      "id": "402c35c0-9d5b-4680-a67c-07b898612042",
+      "input_as_dict": {
+        "create_owner_entry": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-x-router/actions-2-input-as-dict-custom-instructions.md",
+        "send_email_to_owner": true,
+        "skip_if_already_assigned": false,
+        "target_status_name": "Ready for Next Steps",
+        "update_ticket_status": true,
+        "use_custom_instructions": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "DISPATCH_TICKET",
+      "id": "a04c55e1-eed2-4286-8390-f063b7cd5af5",
+      "input_as_dict": {
+        "configure_message_settings": true,
+        "consider_company_continuity": false,
+        "consider_exclusion_rules": false,
+        "consider_similar_tickets": false,
+        "consider_teams_availability": false,
+        "consider_technician_calendar": true,
+        "consider_technician_profile": true,
+        "consider_technician_workload": true,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-x-router/actions-3-input-as-dict-custom-instructions.md",
+        "dispatch_calendar_settings": {
+          "add_schedule_entry": false,
+          "consider_psa_working_hours": false,
+          "consider_us_holidays": false,
+          "days_in_the_future": 0,
+          "holiday_source": "PSA_HOLIDAYS"
+        },
+        "dispatch_exclusion_rules": {
+          "do_not_dispatch_if_owner_is_the_creator": false,
+          "do_not_dispatch_if_scheduled_entry_exists": false,
+          "do_not_dispatch_if_ticket_created_with_owner": false,
+          "filter_by_company_team": false,
+          "skip_if_already_assigned": false
+        },
+        "dispatch_expertise_settings": {
+          "include_profile": true,
+          "include_skills": false
+        },
+        "dispatch_message_settings": {
+          "include_reasoning_in_message": true,
+          "include_ticket_summary_in_message": true,
+          "number_of_technicians_to_suggest": 1
+        },
+        "dispatch_similar_tickets_settings": {
+          "days_to_look_back": 10,
+          "max_similar_tickets": 5
+        },
+        "dispatch_technician_settings": {
+          "dashboard_technician_pool": [
+            {
+              "id": "29682895",
+              "name": "Ben Alsfeld"
+            },
+            {
+              "id": "29682897",
+              "name": "Stephen Luong"
+            },
+            {
+              "id": "29682900",
+              "name": "Derek Truong"
+            },
+            {
+              "id": "29682903",
+              "name": "Daniel Leder"
+            },
+            {
+              "id": "29682929",
+              "name": "James Reid"
+            },
+            {
+              "id": "29682933",
+              "name": "Josh Reid"
+            },
+            {
+              "id": "29682942",
+              "name": "Kurt Verbeeck"
+            },
+            {
+              "id": "29682951",
+              "name": "Lavanya Tanwani"
+            },
+            {
+              "id": "29682952",
+              "name": "Deekshay Sethi"
+            },
+            {
+              "id": "29682973",
+              "name": "Michelle Ronnenkamp"
+            },
+            {
+              "id": "29682977",
+              "name": "Sol Walters"
+            },
+            {
+              "id": "29682986",
+              "name": "Billy Nguyen"
+            }
+          ],
+          "technician_pool_source": "DASHBOARD_POOL"
+        },
+        "dispatch_workload_settings": {
+          "assignment_history_window": 1,
+          "criteria": "NUMBER_OF_TICKETS_ASSIGNED",
+          "criteria_for_considering_tickets": "TICKET_LAST_UPDATE",
+          "include_tickets_worked_in_last_n_days": 2,
+          "include_workflow_assignment_history": true,
+          "workload_days_type": "BUSINESS",
+          "workload_difference_threshold": 3
+        },
+        "guided_instructions": [],
+        "number_of_technicians_to_suggest": 1,
+        "use_custom_instructions": true,
+        "use_round_robin": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "a1f48ba0-72c2-4fa6-9aea-3d62595590ee",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "combinator": "and",
+                    "rules": [
+                      {
+                        "field": "queueID",
+                        "id": null,
+                        "operator": "=",
+                        "value": "100 SD-Issues",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "status",
+                        "id": null,
+                        "operator": "=",
+                        "value": "Waiting Technician",
+                        "valueProviderInput": null
+                      }
+                    ]
+                  },
+                  {
+                    "combinator": "and",
+                    "rules": [
+                      {
+                        "field": "queueID",
+                        "id": null,
+                        "operator": "=",
+                        "value": "110 SD-Access",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "status",
+                        "id": null,
+                        "operator": "=",
+                        "value": "Waiting Technician",
+                        "valueProviderInput": null
+                      }
+                    ]
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "400 PS-Request",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "410 PS-Deployments",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "420 PS-Projects",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "500 S-Pre-Sale",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "700 Development",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "800 DataCenter",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "field": "creatorResourceID",
+                "id": null,
+                "operator": "!=",
+                "value": "Migration Tool - AP API",
+                "valueProviderInput": null
+              }
+            ]
+          },
+          "custom_field_conditions": {
+            "combinator": "and",
+            "conditions": []
+          },
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ADD_TICKET_NOTE",
+      "id": "f47ad09a-dae1-4988-ac84-80065a123022",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-x-router/actions-5-input-as-dict-custom-instructions.md",
+        "note_type": "Internal Note",
+        "use_custom_instructions": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "23783",
+  "integrations": null,
+  "name": "(x) router",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "TRIGGERED",
+  "version_timestamp": "2026-07-08T20:12:41.946548Z"
+}
