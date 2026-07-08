@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export a Neo agent/workflow to normalized JSON plus a human-readable summary."""
+"""Export all Neo agents to normalized JSON plus human-readable summaries."""
 from __future__ import annotations
 
 import argparse
@@ -7,15 +7,15 @@ import json
 import os
 import re
 import sys
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Iterable
 
 import requests
 
 DEFAULT_BASE_URL = os.getenv("NEO_BASE_URL", "https://api.neoagent.io/public-api")
 
-# Fields that usually add noise to diffs.
 NOISY_KEYS = {
     "exported_at",
     "fetched_at",
@@ -28,6 +28,7 @@ NOISY_KEYS = {
     "timings_ms",
 }
 
+TEXT_FIELD_KEYS = {"custom_instructions", "additional_instructions"}
 SORT_KEY_CANDIDATES = ("id", "name", "title", "key", "slug", "order", "index")
 
 
@@ -43,11 +44,13 @@ def api_get(
     path: str,
     params: Dict[str, str] | None = None,
 ) -> Dict[str, Any]:
-    response = session.get(f"{base_url.rstrip('/')}{path}", params=params, timeout=60)
+    response = session.get(f"{base_url.rstrip('/')}{path}", params=params, timeout=90)
     try:
         response.raise_for_status()
     except requests.HTTPError as exc:
-        raise SystemExit(f"GET {path} failed: {response.status_code} {response.text[:1000]}") from exc
+        raise SystemExit(
+            f"GET {path} failed: {response.status_code} {response.text[:1000]}"
+        ) from exc
     return response.json()
 
 
@@ -102,67 +105,99 @@ def dict_sort_key(item: dict[str, Any]) -> tuple:
     return (1, json.dumps(item, sort_keys=True, ensure_ascii=False, default=str))
 
 
-def get_any(data: Any, *paths: str, default: Any = None) -> Any:
-    """
-    Try a sequence of dotted paths against a nested dict.
-    Example: get_any(obj, "name", "metadata.name", default="")
-    """
-    if not isinstance(data, dict):
-        return default
+def list_all_agents(
+    session: requests.Session,
+    base_url: str,
+) -> list[dict[str, Any]]:
+    agents: list[dict[str, Any]] = []
+    cursor: str | None = None
 
-    for path in paths:
-        cur: Any = data
-        ok = True
-        for part in path.split("."):
-            if not isinstance(cur, dict) or part not in cur:
-                ok = False
-                break
-            cur = cur[part]
-        if ok and cur is not None:
-            return cur
-    return default
+    while True:
+        params: dict[str, str] = {"page_size": "100"}
+        if cursor:
+            params["cursor"] = cursor
 
+        payload = api_get(session, base_url, "/agents", params=params)
+        page_agents = payload.get("data", [])
+        if not isinstance(page_agents, list):
+            raise SystemExit("Unexpected /agents response shape")
 
-def set_nested(data: dict[str, Any], path: str, value: Any) -> None:
-    parts = path.split(".")
-    cur: Any = data
-    for part in parts[:-1]:
-        if not isinstance(cur, dict):
-            return
-        cur = cur.setdefault(part, {})
-    if isinstance(cur, dict):
-        cur[parts[-1]] = value
+        agents.extend(page_agents)
+
+        pagination = payload.get("meta", {}).get("pagination", {})
+        if not pagination.get("has_more"):
+            break
+
+        cursor = pagination.get("next_cursor")
+        if not cursor:
+            break
+
+    return agents
 
 
-def pluck_text_to_file(
-    data: dict[str, Any],
-    path: str,
-    file_path: Path,
-    placeholder: str = "[see separate markdown file]",
-) -> str | None:
-    """
-    Move a long text field out of the JSON and into a separate markdown file.
-    Returns the extracted text, or None if the field was absent/empty.
-    """
-    parts = path.split(".")
-    cur: Any = data
-    for part in parts[:-1]:
-        if not isinstance(cur, dict) or part not in cur:
-            return None
-        cur = cur[part]
+def path_slug(path_parts: tuple[str, ...]) -> str:
+    return slugify(".".join(path_parts))
 
-    if not isinstance(cur, dict):
-        return None
 
-    leaf = parts[-1]
-    value = cur.get(leaf)
-    if not isinstance(value, str) or not value.strip():
-        return None
+def extract_text_fields(
+    node: Any,
+    out_dir: Path,
+    agent_id: str,
+    safe_name: str,
+    path: tuple[str, ...] = (),
+) -> tuple[Any, list[str]]:
+    extracted_paths: list[str] = []
 
-    write_text(file_path, value)
-    cur[leaf] = placeholder
-    cur[f"{leaf}_file"] = str(file_path)
-    return value
+    if isinstance(node, dict):
+        out: dict[str, Any] = {}
+        for key in sorted(node.keys()):
+            value = node[key]
+
+            if (
+                key in TEXT_FIELD_KEYS
+                and isinstance(value, str)
+                and value.strip()
+            ):
+                rel_file = (
+                    Path("agent_text")
+                    / "custom-instructions"
+                    / f"{agent_id}-{safe_name}"
+                    / f"{path_slug(path + (key,))}.md"
+                )
+                abs_file = out_dir / rel_file
+                write_text(abs_file, value)
+                out[key] = "[see separate markdown file]"
+                out[f"{key}_file"] = str(rel_file)
+                extracted_paths.append(str(rel_file))
+                continue
+
+            new_value, child_paths = extract_text_fields(
+                value,
+                out_dir,
+                agent_id,
+                safe_name,
+                path + (key,),
+            )
+            out[key] = new_value
+            extracted_paths.extend(child_paths)
+
+        return out, extracted_paths
+
+    if isinstance(node, list):
+        out_list: list[Any] = []
+        for idx, item in enumerate(node):
+            new_value, child_paths = extract_text_fields(
+                item,
+                out_dir,
+                agent_id,
+                safe_name,
+                path + (str(idx),),
+            )
+            out_list.append(new_value)
+            extracted_paths.extend(child_paths)
+        return out_list, extracted_paths
+
+    return node, extracted_paths
 
 
 def first_items_text(items: Any, limit: int = 5) -> str:
@@ -186,73 +221,137 @@ def summarize_agent(
     agent_name: str,
     agent: dict[str, Any],
     snapshot: dict[str, Any],
-    custom_instructions_text: str | None,
-    custom_instructions_file: Path | None,
+    extracted_text_files: list[str],
+    versions_count: int,
 ) -> str:
     lines: list[str] = []
-    title = agent_name or str(get_any(snapshot, "name", "title", default=f"Agent {agent_id}"))
+    title = agent_name or str(snapshot.get("name") or agent.get("name") or f"Agent {agent_id}")
+
     lines.append(f"# Neo agent export: {title}")
     lines.append("")
     lines.append(f"- Agent ID: `{agent_id}`")
     if agent_name:
         lines.append(f"- Export label: `{agent_name}`")
 
-    status = get_any(snapshot, "status", "enabled", default=None)
+    status = snapshot.get("state") or agent.get("state")
     if status is not None:
-        lines.append(f"- Status: `{status}`")
+        lines.append(f"- State: `{status}`")
 
-    autonomy_type = get_any(agent, "autonomy_type", "type", default=None)
+    autonomy_type = snapshot.get("autonomy_type") or agent.get("autonomy_type")
     if autonomy_type is not None:
         lines.append(f"- Type: `{autonomy_type}`")
 
-    trigger_type = get_any(snapshot, "trigger_type", "trigger.type", default=None)
+    trigger_type = snapshot.get("trigger_type") or agent.get("trigger_type")
     if trigger_type is not None:
         lines.append(f"- Trigger: `{trigger_type}`")
 
-    schedule = get_any(snapshot, "schedule", default=None)
-    if schedule is not None:
-        if isinstance(schedule, dict):
-            lines.append(f"- Schedule: `{json.dumps(schedule, sort_keys=True, ensure_ascii=False)}`")
-        else:
-            lines.append(f"- Schedule: `{schedule}`")
+    entity_type = snapshot.get("entity_type") or agent.get("entity_type")
+    if entity_type is not None:
+        lines.append(f"- Entity: `{entity_type}`")
 
-    integrations = get_any(snapshot, "integrations", default=[])
+    if versions_count:
+        lines.append(f"- Version records exported: `{versions_count}`")
+
+    integrations = snapshot.get("integrations") or agent.get("integrations") or []
     if isinstance(integrations, list):
         lines.append(f"- Integrations: {len(integrations)}")
         sample = first_items_text(integrations)
         if sample:
             lines.append(f"- Integration sample: {sample}")
 
-    toolbox = get_any(snapshot, "toolbox", default=None)
+    toolbox = snapshot.get("toolbox") or agent.get("toolbox") or {}
     if isinstance(toolbox, dict):
         tool_settings = toolbox.get("tool_settings_by_type")
         if isinstance(tool_settings, dict):
             lines.append(f"- Tools configured: {len(tool_settings)}")
-            lines.append(f"- Tool sample: {first_items_text([{ 'name': k } for k in tool_settings.keys()])}")
+            lines.append(f"- Tool sample: {first_items_text([{'name': k} for k in tool_settings.keys()])}")
 
-    if custom_instructions_text:
-        preview = " ".join(custom_instructions_text.strip().splitlines()).strip()
-        if preview:
-            lines.append(f"- Custom instructions preview: {preview[:180]}")
-    if custom_instructions_file is not None:
-        lines.append(f"- Custom instructions file: `{custom_instructions_file}`")
+    if extracted_text_files:
+        lines.append(f"- Extracted text files: {len(extracted_text_files)}")
+        for file_path in extracted_text_files[:8]:
+            lines.append(f"- `{file_path}`")
+        if len(extracted_text_files) > 8:
+            lines.append(f"- … (+{len(extracted_text_files) - 8} more)")
 
     lines.append("")
     lines.append("## Export contents")
     lines.append("")
-    lines.append("- `agents/` = normalized agent record")
-    lines.append("- `agent_snapshots/` = normalized resolved snapshot")
+    lines.append("- `agents/` = normalized agent records")
+    lines.append("- `agent_snapshots/` = normalized resolved snapshots")
     lines.append("- `agent_versions/` = normalized version history")
-    lines.append("- `agent_text/custom-instructions/` = multiline instructions extracted for diffing")
+    lines.append("- `agent_text/custom-instructions/` = extracted multiline instructions for clean diffs")
+    lines.append("- `summaries/` = short human-readable summaries")
     lines.append("")
     lines.append(f"_Exported at {datetime.now(timezone.utc).isoformat()}_")
     return "\n".join(lines)
 
 
+def export_one_agent(
+    session: requests.Session,
+    base_url: str,
+    agent_stub: dict[str, Any],
+    out_dir: Path,
+    include_versions: bool,
+) -> dict[str, Any]:
+    agent_id = str(agent_stub["id"])
+    safe_name = slugify(str(agent_stub.get("name") or f"agent-{agent_id}"))
+
+    raw_agent = api_get(session, base_url, f"/agents/{agent_id}")
+    agent_data = normalize(raw_agent.get("data", raw_agent))
+
+    snapshot_timestamp = datetime.now(timezone.utc).isoformat()
+    raw_snapshot = api_get(
+        session,
+        base_url,
+        f"/agents/{agent_id}/version-at",
+        params={"timestamp": snapshot_timestamp},
+    )
+    snapshot_data = normalize(raw_snapshot.get("data", raw_snapshot))
+
+    agent_data, agent_text_files = extract_text_fields(agent_data, out_dir, agent_id, safe_name)
+    snapshot_data, snapshot_text_files = extract_text_fields(snapshot_data, out_dir, agent_id, safe_name)
+
+    versions_count = 0
+    if include_versions:
+        raw_versions = api_get(session, base_url, f"/agents/{agent_id}/versions")
+        versions_data = normalize(raw_versions.get("data", raw_versions))
+        versions_data, version_text_files = extract_text_fields(versions_data, out_dir, agent_id, safe_name)
+        if isinstance(versions_data, list):
+            versions_count = len(versions_data)
+        write_json(out_dir / "agent_versions" / f"{agent_id}-{safe_name}.json", versions_data)
+    else:
+        version_text_files = []
+
+    write_json(out_dir / "agents" / f"{agent_id}-{safe_name}.json", agent_data)
+    write_json(out_dir / "agent_snapshots" / f"{agent_id}-{safe_name}.json", snapshot_data)
+
+    summary = summarize_agent(
+        agent_id=agent_id,
+        agent_name=str(agent_stub.get("name") or ""),
+        agent=agent_data,
+        snapshot=snapshot_data,
+        extracted_text_files=sorted(set(agent_text_files + snapshot_text_files + version_text_files)),
+        versions_count=versions_count,
+    )
+    write_text(out_dir / "summaries" / f"{agent_id}-{safe_name}.md", summary)
+
+    return {
+        "id": agent_id,
+        "name": agent_stub.get("name", ""),
+        "state": agent_stub.get("state", ""),
+        "autonomy_type": agent_stub.get("autonomy_type", ""),
+        "entity_type": agent_stub.get("entity_type", ""),
+        "trigger_type": agent_stub.get("trigger_type", ""),
+        "agent_file": str(Path("agents") / f"{agent_id}-{safe_name}.json"),
+        "snapshot_file": str(Path("agent_snapshots") / f"{agent_id}-{safe_name}.json"),
+        "summary_file": str(Path("summaries") / f"{agent_id}-{safe_name}.md"),
+        "versions_file": str(Path("agent_versions") / f"{agent_id}-{safe_name}.json") if include_versions else "",
+        "versions_count": versions_count,
+    }
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Export a single Neo agent/workflow")
-    parser.add_argument("--agent-id", required=True, help="Neo agent/workflow ID, e.g. 23782")
-    parser.add_argument("--agent-name", default="", help="Optional friendly name for filenames")
+    parser = argparse.ArgumentParser(description="Export every Neo agent/workflow")
     parser.add_argument("--out", default="neo-backup", help="Output folder")
     parser.add_argument("--include-versions", action="store_true", help="Also export version history")
     args = parser.parse_args()
@@ -263,8 +362,6 @@ def main() -> int:
         return 2
 
     base_url = DEFAULT_BASE_URL
-    agent_id = str(args.agent_id)
-    safe_name = slugify(args.agent_name) if args.agent_name.strip() else f"agent-{agent_id}"
     out_dir = Path(args.out)
 
     session = requests.Session()
@@ -275,68 +372,41 @@ def main() -> int:
         }
     )
 
-    print(f"Fetching agent {agent_id}...")
-    agent_payload = api_get(session, base_url, f"/agents/{agent_id}")
-    agent_data = normalize(agent_payload.get("data", agent_payload))
+    print("Fetching all agents...")
+    agent_stubs = list_all_agents(session, base_url)
 
-    print(f"Fetching resolved snapshot for {agent_id}...")
-    snapshot_timestamp = datetime.now(timezone.utc).isoformat()
-    snapshot_payload = api_get(
-        session,
-        base_url,
-        f"/agents/{agent_id}/version-at",
-        params={"timestamp": snapshot_timestamp},
-    )
-    snapshot_data = normalize(snapshot_payload.get("data", snapshot_payload))
+    results: list[dict[str, Any]] = []
+    state_counts = Counter()
+    trigger_counts = Counter()
+    type_counts = Counter()
 
-    custom_instructions_file = out_dir / "agent_text" / "custom-instructions" / f"{agent_id}-{safe_name}.md"
-    custom_instructions_text = pluck_text_to_file(
-        snapshot_data,
-        "agent_settings.custom_instructions",
-        custom_instructions_file,
-    )
-    # If the agent record also carries the same field, split it out there too.
-    pluck_text_to_file(
-        agent_data,
-        "agent_settings.custom_instructions",
-        custom_instructions_file,
-    )
+    for stub in agent_stubs:
+        print(f"Exporting {stub.get('id')} - {stub.get('name')}")
+        result = export_one_agent(
+            session=session,
+            base_url=base_url,
+            agent_stub=stub,
+            out_dir=out_dir,
+            include_versions=args.include_versions,
+        )
+        results.append(result)
+        state_counts[result["state"]] += 1
+        trigger_counts[result["trigger_type"]] += 1
+        type_counts[result["autonomy_type"]] += 1
 
-    write_json(out_dir / "agents" / f"{agent_id}-{safe_name}.json", agent_data)
-    write_json(out_dir / "agent_snapshots" / f"{agent_id}-{safe_name}.json", snapshot_data)
+    manifest = {
+        "exported_at": datetime.now(timezone.utc).isoformat(),
+        "base_url": base_url,
+        "include_versions": args.include_versions,
+        "agent_count": len(results),
+        "counts_by_state": dict(state_counts),
+        "counts_by_trigger_type": dict(trigger_counts),
+        "counts_by_type": dict(type_counts),
+        "agents": results,
+    }
+    write_json(out_dir / "manifest.json", manifest)
 
-    version_count = 0
-    if args.include_versions:
-        print(f"Fetching versions for {agent_id}...")
-        versions_payload = api_get(session, base_url, f"/agents/{agent_id}/versions")
-        versions_data = normalize(versions_payload.get("data", versions_payload))
-        if isinstance(versions_data, list):
-            version_count = len(versions_data)
-        write_json(out_dir / "agent_versions" / f"{agent_id}-{safe_name}.json", versions_data)
-
-    summary = summarize_agent(
-        agent_id=agent_id,
-        agent_name=args.agent_name.strip(),
-        agent=agent_data,
-        snapshot=snapshot_data,
-        custom_instructions_text=custom_instructions_text,
-        custom_instructions_file=custom_instructions_file if custom_instructions_text else None,
-    )
-    write_text(out_dir / "summaries" / f"{agent_id}-{safe_name}.md", summary)
-
-    write_json(
-        out_dir / "manifest.json",
-        {
-            "exported_at": datetime.now(timezone.utc).isoformat(),
-            "base_url": base_url,
-            "agent_id": agent_id,
-            "agent_name": args.agent_name.strip(),
-            "include_versions": args.include_versions,
-            "version_count": version_count,
-        },
-    )
-
-    print(f"Done. Wrote export to {out_dir}")
+    print(f"Done. Exported {len(results)} agents to {out_dir}")
     return 0
 
 
