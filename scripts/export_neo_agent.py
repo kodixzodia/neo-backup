@@ -9,13 +9,13 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable
+from typing import Any, Dict
 
 import requests
 
 DEFAULT_BASE_URL = os.getenv("NEO_BASE_URL", "https://api.neoagent.io/public-api")
 
-# Tune this list to your tenant. These are the usual "diff noise" fields.
+# Fields that usually add noise to diffs.
 NOISY_KEYS = {
     "exported_at",
     "fetched_at",
@@ -67,12 +67,12 @@ def write_text(path: Path, text: str) -> None:
 def normalize(value: Any) -> Any:
     """Recursively remove noisy fields and sort nested lists."""
     if isinstance(value, dict):
-        items = []
+        out: dict[str, Any] = {}
         for key in sorted(value.keys()):
             if key in NOISY_KEYS:
                 continue
-            items.append((key, normalize(value[key])))
-        return {k: v for k, v in items}
+            out[key] = normalize(value[key])
+        return out
 
     if isinstance(value, list):
         normalized = [normalize(item) for item in value]
@@ -80,15 +80,12 @@ def normalize(value: Any) -> Any:
         if not normalized:
             return normalized
 
-        # Sort lists of dicts by the first stable-looking key we can find.
         if all(isinstance(item, dict) for item in normalized):
             return sorted(normalized, key=dict_sort_key)
 
-        # Sort lists of scalars if possible.
         if all(isinstance(item, (str, int, float, bool)) or item is None for item in normalized):
             return sorted(normalized, key=lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False))
 
-        # Fallback: sort by serialized content.
         return sorted(
             normalized,
             key=lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False, default=str),
@@ -107,44 +104,91 @@ def dict_sort_key(item: dict[str, Any]) -> tuple:
 
 def get_any(data: Any, *paths: str, default: Any = None) -> Any:
     """
-    Try a sequence of keys/paths against a nested dict.
+    Try a sequence of dotted paths against a nested dict.
     Example: get_any(obj, "name", "metadata.name", default="")
     """
-    if isinstance(data, dict):
-        for path in paths:
-            cur: Any = data
-            ok = True
-            for part in path.split("."):
-                if not isinstance(cur, dict) or part not in cur:
-                    ok = False
-                    break
-                cur = cur[part]
-            if ok and cur is not None:
-                return cur
+    if not isinstance(data, dict):
+        return default
+
+    for path in paths:
+        cur: Any = data
+        ok = True
+        for part in path.split("."):
+            if not isinstance(cur, dict) or part not in cur:
+                ok = False
+                break
+            cur = cur[part]
+        if ok and cur is not None:
+            return cur
     return default
+
+
+def set_nested(data: dict[str, Any], path: str, value: Any) -> None:
+    parts = path.split(".")
+    cur: Any = data
+    for part in parts[:-1]:
+        if not isinstance(cur, dict):
+            return
+        cur = cur.setdefault(part, {})
+    if isinstance(cur, dict):
+        cur[parts[-1]] = value
+
+
+def pluck_text_to_file(
+    data: dict[str, Any],
+    path: str,
+    file_path: Path,
+    placeholder: str = "[see separate markdown file]",
+) -> str | None:
+    """
+    Move a long text field out of the JSON and into a separate markdown file.
+    Returns the extracted text, or None if the field was absent/empty.
+    """
+    parts = path.split(".")
+    cur: Any = data
+    for part in parts[:-1]:
+        if not isinstance(cur, dict) or part not in cur:
+            return None
+        cur = cur[part]
+
+    if not isinstance(cur, dict):
+        return None
+
+    leaf = parts[-1]
+    value = cur.get(leaf)
+    if not isinstance(value, str) or not value.strip():
+        return None
+
+    write_text(file_path, value)
+    cur[leaf] = placeholder
+    cur[f"{leaf}_file"] = str(file_path)
+    return value
 
 
 def first_items_text(items: Any, limit: int = 5) -> str:
     if not isinstance(items, list) or not items:
         return ""
+
     out: list[str] = []
     for item in items[:limit]:
         if isinstance(item, dict):
-            label = (
-                item.get("name")
-                or item.get("title")
-                or item.get("key")
-                or item.get("slug")
-                or item.get("id")
-            )
+            label = item.get("name") or item.get("title") or item.get("key") or item.get("slug") or item.get("id")
             out.append(str(label))
         else:
             out.append(str(item))
+
     suffix = "" if len(items) <= limit else f" … (+{len(items) - limit} more)"
     return ", ".join(out) + suffix
 
 
-def summarize_agent(agent_id: str, agent_name: str, agent: dict[str, Any], snapshot: dict[str, Any]) -> str:
+def summarize_agent(
+    agent_id: str,
+    agent_name: str,
+    agent: dict[str, Any],
+    snapshot: dict[str, Any],
+    custom_instructions_text: str | None,
+    custom_instructions_file: Path | None,
+) -> str:
     lines: list[str] = []
     title = agent_name or str(get_any(snapshot, "name", "title", default=f"Agent {agent_id}"))
     lines.append(f"# Neo agent export: {title}")
@@ -168,8 +212,7 @@ def summarize_agent(agent_id: str, agent_name: str, agent: dict[str, Any], snaps
     schedule = get_any(snapshot, "schedule", default=None)
     if schedule is not None:
         if isinstance(schedule, dict):
-            schedule_text = first_items_text([schedule], limit=1)
-            lines.append(f"- Schedule: `{schedule_text}`")
+            lines.append(f"- Schedule: `{json.dumps(schedule, sort_keys=True, ensure_ascii=False)}`")
         else:
             lines.append(f"- Schedule: `{schedule}`")
 
@@ -187,17 +230,20 @@ def summarize_agent(agent_id: str, agent_name: str, agent: dict[str, Any], snaps
             lines.append(f"- Tools configured: {len(tool_settings)}")
             lines.append(f"- Tool sample: {first_items_text([{ 'name': k } for k in tool_settings.keys()])}")
 
-    custom_instructions = get_any(snapshot, "agent_settings.custom_instructions", "custom_instructions", default=None)
-    if custom_instructions:
-        preview = str(custom_instructions).strip().splitlines()[0]
-        lines.append(f"- Instructions preview: {preview[:160]}")
+    if custom_instructions_text:
+        preview = " ".join(custom_instructions_text.strip().splitlines()).strip()
+        if preview:
+            lines.append(f"- Custom instructions preview: {preview[:180]}")
+    if custom_instructions_file is not None:
+        lines.append(f"- Custom instructions file: `{custom_instructions_file}`")
 
     lines.append("")
     lines.append("## Export contents")
     lines.append("")
-    lines.append("- `agents/` = raw agent record")
+    lines.append("- `agents/` = normalized agent record")
     lines.append("- `agent_snapshots/` = normalized resolved snapshot")
     lines.append("- `agent_versions/` = normalized version history")
+    lines.append("- `agent_text/custom-instructions/` = multiline instructions extracted for diffing")
     lines.append("")
     lines.append(f"_Exported at {datetime.now(timezone.utc).isoformat()}_")
     return "\n".join(lines)
@@ -231,33 +277,51 @@ def main() -> int:
 
     print(f"Fetching agent {agent_id}...")
     agent_payload = api_get(session, base_url, f"/agents/{agent_id}")
-    agent_data = agent_payload.get("data", agent_payload)
-    agent_data = normalize(agent_data)
-    write_json(out_dir / "agents" / f"{agent_id}-{safe_name}.json", agent_data)
+    agent_data = normalize(agent_payload.get("data", agent_payload))
 
+    print(f"Fetching resolved snapshot for {agent_id}...")
     snapshot_timestamp = datetime.now(timezone.utc).isoformat()
-    print(f"Fetching resolved snapshot for {agent_id} at {snapshot_timestamp}...")
     snapshot_payload = api_get(
         session,
         base_url,
         f"/agents/{agent_id}/version-at",
         params={"timestamp": snapshot_timestamp},
     )
-    snapshot_data = snapshot_payload.get("data", snapshot_payload)
-    snapshot_data = normalize(snapshot_data)
+    snapshot_data = normalize(snapshot_payload.get("data", snapshot_payload))
+
+    custom_instructions_file = out_dir / "agent_text" / "custom-instructions" / f"{agent_id}-{safe_name}.md"
+    custom_instructions_text = pluck_text_to_file(
+        snapshot_data,
+        "agent_settings.custom_instructions",
+        custom_instructions_file,
+    )
+    # If the agent record also carries the same field, split it out there too.
+    pluck_text_to_file(
+        agent_data,
+        "agent_settings.custom_instructions",
+        custom_instructions_file,
+    )
+
+    write_json(out_dir / "agents" / f"{agent_id}-{safe_name}.json", agent_data)
     write_json(out_dir / "agent_snapshots" / f"{agent_id}-{safe_name}.json", snapshot_data)
 
     version_count = 0
     if args.include_versions:
         print(f"Fetching versions for {agent_id}...")
         versions_payload = api_get(session, base_url, f"/agents/{agent_id}/versions")
-        versions_data = versions_payload.get("data", versions_payload)
-        versions_data = normalize(versions_data)
+        versions_data = normalize(versions_payload.get("data", versions_payload))
         if isinstance(versions_data, list):
             version_count = len(versions_data)
         write_json(out_dir / "agent_versions" / f"{agent_id}-{safe_name}.json", versions_data)
 
-    summary = summarize_agent(agent_id, args.agent_name.strip(), agent_data, snapshot_data)
+    summary = summarize_agent(
+        agent_id=agent_id,
+        agent_name=args.agent_name.strip(),
+        agent=agent_data,
+        snapshot=snapshot_data,
+        custom_instructions_text=custom_instructions_text,
+        custom_instructions_file=custom_instructions_file if custom_instructions_text else None,
+    )
     write_text(out_dir / "summaries" / f"{agent_id}-{safe_name}.md", summary)
 
     write_json(
