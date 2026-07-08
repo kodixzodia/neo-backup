@@ -42,6 +42,6 @@ jobs:
           branch: neo/export-service-desk-engineer
           title: "Backup Neo agent 23782 - service-desk-engineer"
           commit-message: "Backup Neo agent 23782 - service-desk-engineer"
-          body: "Automated export of Neo agent 23782, resolved snapshot, and version history."
+          body: "Automated export of Neo agent 23782, resolved snapshot, version history, and extracted custom instructions."
           add-paths: |
             neo-backup/**
