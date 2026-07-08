@@ -1,9 +1,7 @@
-name: Export Neo agent pilot
+name: Export all Neo agents
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 3 * * *" # nightly UTC
 
 permissions:
   contents: write
@@ -25,23 +23,21 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Export Neo agent
+      - name: Export all agents
         env:
           NEO_API_KEY: ${{ secrets.NEO_API_KEY }}
           NEO_BASE_URL: ${{ secrets.NEO_BASE_URL }}
         run: |
-          python scripts/export_neo_agent.py \
-            --agent-id 23782 \
-            --agent-name service-desk-engineer \
+          python scripts/export_all_neo_agents.py \
             --out neo-backup \
             --include-versions
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: neo/export-service-desk-engineer
-          title: "Backup Neo agent 23782 - service-desk-engineer"
-          commit-message: "Backup Neo agent 23782 - service-desk-engineer"
-          body: "Automated export of Neo agent 23782, resolved snapshot, version history, and extracted custom instructions."
+          branch: neo/export-all-agents
+          title: "Backup all Neo agents"
+          commit-message: "Backup all Neo agents"
+          body: "Automated export of all Neo agents, snapshots, versions, summaries, and extracted multiline instructions."
           add-paths: |
             neo-backup/**
