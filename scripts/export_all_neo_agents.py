@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export all Neo agents to normalized JSON plus human-readable summaries."""
+"""Export every enabled Neo agent/workflow."""
 from __future__ import annotations
 
 import argparse
@@ -10,7 +10,7 @@ import sys
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable
+from typing import Any, Dict
 
 import requests
 
@@ -68,7 +68,6 @@ def write_text(path: Path, text: str) -> None:
 
 
 def normalize(value: Any) -> Any:
-    """Recursively remove noisy fields and sort nested lists."""
     if isinstance(value, dict):
         out: dict[str, Any] = {}
         for key in sorted(value.keys()):
@@ -108,12 +107,13 @@ def dict_sort_key(item: dict[str, Any]) -> tuple:
 def list_all_agents(
     session: requests.Session,
     base_url: str,
+    state: str = "ENABLED",
 ) -> list[dict[str, Any]]:
     agents: list[dict[str, Any]] = []
     cursor: str | None = None
 
     while True:
-        params: dict[str, str] = {"page_size": "100"}
+        params: dict[str, str] = {"page_size": "100", "state": state}
         if cursor:
             params["cursor"] = cursor
 
@@ -153,11 +153,7 @@ def extract_text_fields(
         for key in sorted(node.keys()):
             value = node[key]
 
-            if (
-                key in TEXT_FIELD_KEYS
-                and isinstance(value, str)
-                and value.strip()
-            ):
+            if key in TEXT_FIELD_KEYS and isinstance(value, str) and value.strip():
                 rel_file = (
                     Path("agent_text")
                     / "custom-instructions"
@@ -197,7 +193,7 @@ def extract_text_fields(
             extracted_paths.extend(child_paths)
         return out_list, extracted_paths
 
-    return node, extracted_paths
+    return node, []
 
 
 def first_items_text(items: Any, limit: int = 5) -> str:
@@ -351,9 +347,10 @@ def export_one_agent(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Export every Neo agent/workflow")
+    parser = argparse.ArgumentParser(description="Export every enabled Neo agent/workflow")
     parser.add_argument("--out", default="neo-backup", help="Output folder")
     parser.add_argument("--include-versions", action="store_true", help="Also export version history")
+    parser.add_argument("--state", default="ENABLED", help="Agent state filter (default: ENABLED)")
     args = parser.parse_args()
 
     api_key = os.getenv("NEO_API_KEY")
@@ -372,8 +369,8 @@ def main() -> int:
         }
     )
 
-    print("Fetching all agents...")
-    agent_stubs = list_all_agents(session, base_url)
+    print(f"Fetching all agents with state={args.state}...")
+    agent_stubs = list_all_agents(session, base_url, state=args.state)
 
     results: list[dict[str, Any]] = []
     state_counts = Counter()
@@ -397,6 +394,7 @@ def main() -> int:
     manifest = {
         "exported_at": datetime.now(timezone.utc).isoformat(),
         "base_url": base_url,
+        "state_filter": args.state,
         "include_versions": args.include_versions,
         "agent_count": len(results),
         "counts_by_state": dict(state_counts),
@@ -406,7 +404,7 @@ def main() -> int:
     }
     write_json(out_dir / "manifest.json", manifest)
 
-    print(f"Done. Exported {len(results)} agents to {out_dir}")
+    print(f"Done. Exported {len(results)} enabled agents to {out_dir}")
     return 0
 
 
