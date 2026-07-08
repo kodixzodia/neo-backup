@@ -1,4 +1,4 @@
-name: Export all Neo agents
+name: Export enabled Neo agents
 
 on:
   workflow_dispatch:
@@ -23,21 +23,22 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Export all agents
+      - name: Export enabled agents
         env:
           NEO_API_KEY: ${{ secrets.NEO_API_KEY }}
           NEO_BASE_URL: ${{ secrets.NEO_BASE_URL }}
         run: |
           python scripts/export_all_neo_agents.py \
             --out neo-backup \
-            --include-versions
+            --include-versions \
+            --state ENABLED
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: neo/export-all-agents
-          title: "Backup all Neo agents"
-          commit-message: "Backup all Neo agents"
-          body: "Automated export of all Neo agents, snapshots, versions, summaries, and extracted multiline instructions."
+          branch: neo/export-enabled-agents
+          title: "Backup enabled Neo agents"
+          commit-message: "Backup enabled Neo agents"
+          body: "Automated export of enabled Neo agents, snapshots, version history, summaries, and extracted multiline instructions."
           add-paths: |
             neo-backup/**
