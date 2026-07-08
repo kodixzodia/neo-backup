@@ -1,0 +1,191 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "0ce3c4bf-3333-4596-8b06-e4b8d50a51f7",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": null,
+          "new_status": "Complete"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "28da8dba-de5c-4985-9e1e-4b39c27436fb",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Canceled",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Complete",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Completed (With CSAT)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Duplicate",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "contactID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "30688443",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "description",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Blackpoint Cloud Response",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Blackpoint",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "020 Triage",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "100 SD-Issues",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "210 CS-Monitoring Alert",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "220 CS-Security",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "operator": "=",
+                    "value": "010 Client Portal"
+                  }
+                ]
+              }
+            ]
+          },
+          "custom_field_conditions": null,
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "NOTIFY_USERS",
+      "id": "6cbbfc79-98d1-449a-834a-af210098c957",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/25350-black-point-closer/actions-2-input-as-dict-custom-instructions.md",
+        "notification_channel": "TEAMS",
+        "use_custom_instructions": true,
+        "users": [
+          {
+            "id": "31f43227-e9e1-4cb6-8cb8-97966acf2b1b",
+            "name": "Kodi Todd"
+          }
+        ]
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "25350",
+  "integrations": null,
+  "name": "black-point-closer",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "SCHEDULED",
+  "version_timestamp": "2026-07-08T15:08:32.960511Z"
+}

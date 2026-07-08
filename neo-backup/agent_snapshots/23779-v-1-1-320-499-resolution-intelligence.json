@@ -1,0 +1,995 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "10335859-26ec-43d8-a1d6-b13d3af544b5",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "ABC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "ASB"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BLR"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BLS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BTC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CBC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CFS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CGC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CLP"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CMW"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CSI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FAK"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FCL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FFS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FWI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "G3D"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "GRV"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "HFM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "HIE"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "IIS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "KES"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "KVR"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "LCF"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "LDW"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "LIL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "MSD"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "MXM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "NGM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "NKG"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "OMG"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "PCM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "PVB"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "QBC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "QMI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "RCC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "RDC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "RWM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SCI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SCP"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SEC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SEG"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SPM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SSL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "VCS"
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "320 SA-Corrective",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "400 PS-Request",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "410 PS-Deployments",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "420 PS-Projects",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Complete",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Completed (With CSAT)",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "field": "companyLocationID",
+                "id": null,
+                "operator": "=",
+                "value": "",
+                "valueProviderInput": null
+              }
+            ]
+          },
+          "custom_field_conditions": {
+            "combinator": "and",
+            "conditions": []
+          },
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "AGENTIC",
+      "id": "ce0922b5-1d74-483d-927b-f8f2279a41c6",
+      "input_as_dict": {},
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": {
+    "custom_instructions": "[see separate markdown file]",
+    "custom_instructions_file": "agent_text/custom-instructions/23779-v-1-1-320-499-resolution-intelligence/agent-settings-custom-instructions.md",
+    "model": null,
+    "reasoning_effort": null,
+    "report_test_via": "TEAMS_MESSAGE_TO_INTERNAL_TEAM",
+    "subagent_fanout_enabled": false,
+    "test_mode": false,
+    "til_channel": "TEAMS",
+    "trigger_mode": "MENTION_ONLY"
+  },
+  "audience": "MSP",
+  "autonomy_type": "AGENTIC",
+  "entity_type": "TICKET",
+  "id": "23779",
+  "integrations": {
+    "ad": {
+      "permissions": [
+        {
+          "access_level": "DISABLED",
+          "group_type": "COMPUTERS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "ENTRA_CONNECT_SYNC",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "GROUPS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "INFRASTRUCTURE",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "ORGANIZATIONAL_STRUCTURE",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "USER_MANAGEMENT",
+          "require_til": false
+        }
+      ]
+    },
+    "autotask": {
+      "permissions": [
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "ADMIN",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "ATTACHMENTS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "BILLING_CODES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "CLIENT_FACING_TICKET_NOTES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "COMPANIES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "COMPANY_TODOS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "CONFIGURATIONS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "CONTACTS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "CONTRACTS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "DOCUMENTS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "EXPENSES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "INVENTORY",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "INVOICES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "KNOWLEDGE_BASE",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "OPPORTUNITIES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "PRODUCTS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "PROJECTS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "PURCHASE_ORDERS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "QUOTES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "RESOURCES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "SALES_ORDERS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "SERVICE_CALLS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "SURVEYS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "TAGS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "DISABLED",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "TIME_ENTRIES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "READ_ONLY",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "TICKETS",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        },
+        {
+          "access_level": "READ_WRITE",
+          "allow_delete": false,
+          "allow_merge": null,
+          "client_facing_settings": null,
+          "group_type": "TICKET_NOTES",
+          "require_til": false,
+          "time_entry_udf_settings": null,
+          "update_allowed_fields": null
+        }
+      ]
+    },
+    "confluence": {
+      "permissions": []
+    },
+    "cw_asio": {
+      "permissions": []
+    },
+    "cw_automate": {
+      "permissions": []
+    },
+    "cw_psa": {
+      "permissions": []
+    },
+    "datto_rmm": {
+      "permissions": []
+    },
+    "exchange": {
+      "permissions": [
+        {
+          "access_level": "DISABLED",
+          "group_type": "ADDRESS_LISTS_AND_POLICIES",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "COMPLIANCE_AND_AUDITING",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "DISTRIBUTION_GROUPS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "MAILBOXES",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "MAILBOX_PERMISSIONS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "MAIL_FLOW_AND_TRANSPORT",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "RECIPIENTS_AND_CONTACTS",
+          "require_til": false
+        }
+      ]
+    },
+    "halo_psa": {
+      "permissions": []
+    },
+    "hudu": {
+      "permissions": []
+    },
+    "itglue": {
+      "permissions": [
+        {
+          "access_level": "READ_ONLY",
+          "allow_delete": false,
+          "group_type": "CONFIGURATIONS",
+          "require_til": false
+        },
+        {
+          "access_level": "READ_ONLY",
+          "allow_delete": false,
+          "group_type": "CONTACTS",
+          "require_til": false
+        },
+        {
+          "access_level": "READ_ONLY",
+          "allow_delete": false,
+          "group_type": "FLEXIBLE_ASSETS",
+          "require_til": false
+        },
+        {
+          "access_level": "READ_ONLY",
+          "allow_delete": false,
+          "group_type": "FLEXIBLE_ASSET_TYPES",
+          "require_til": false
+        },
+        {
+          "access_level": "READ_ONLY",
+          "allow_delete": false,
+          "group_type": "ORGANIZATIONS",
+          "require_til": false
+        },
+        {
+          "access_level": "READ_ONLY",
+          "allow_delete": false,
+          "group_type": "PASSWORDS",
+          "require_til": false
+        },
+        {
+          "access_level": "READ_WRITE",
+          "allow_delete": false,
+          "group_type": "DOCUMENTS",
+          "require_til": false
+        }
+      ]
+    },
+    "ms_graph": {
+      "permissions": [
+        {
+          "access_level": "DISABLED",
+          "group_type": "APPLICATIONS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "AUDIT_AND_REPORTS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "CONDITIONAL_ACCESS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "DEVICES",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "DIRECTORY_ROLES",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "DOMAINS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "GROUPS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "LICENSING",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "MAIL",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "SECURITY",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "SECURITY_OPERATIONS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "SERVICE_HEALTH",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "SHAREPOINT_AND_ONEDRIVE",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "TEAMS_AND_CHATS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "USER_MANAGEMENT",
+          "require_til": false
+        }
+      ]
+    },
+    "ncentral_rmm": {
+      "permissions": []
+    },
+    "neo_api": {
+      "permissions": [
+        {
+          "access_level": "DISABLED",
+          "group_type": "AGENTS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "BILLING",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "CHAT",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "END_COMPANIES",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "EXECUTIONS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "INBOX_AND_COMMS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "INTEGRATIONS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "OBSERVABILITY",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "SCHEDULED_WORK",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "TECHNICIANS",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "TEMPLATES",
+          "require_til": false
+        },
+        {
+          "access_level": "DISABLED",
+          "group_type": "TENANT_CONFIG",
+          "require_til": false
+        }
+      ]
+    },
+    "ninja_rmm": {
+      "permissions": []
+    },
+    "nsight_rmm": {
+      "permissions": []
+    },
+    "scalepad": {
+      "permissions": []
+    },
+    "screenconnect_rmm": {
+      "permissions": []
+    },
+    "servicenow": {
+      "permissions": []
+    },
+    "vsax_rmm": {
+      "permissions": []
+    }
+  },
+  "name": "(v.1.1) 320-499-resolution_intelligence",
+  "state": "ENABLED",
+  "toolbox": {
+    "tool_settings_by_type": {
+      "ADD_INTERNAL_TICKET_NOTE": {
+        "ask_for_feedback": false,
+        "autotask_note_publish_id": null,
+        "autotask_note_type_id": null,
+        "halo_outcome_id": null,
+        "use_custom_autotask_note_type": false
+      },
+      "DELAY": {},
+      "FIND_CONFIGURATIONS": {},
+      "FIND_DOCUMENTATION": {},
+      "FIND_PSA_CONTACTS": {},
+      "FIND_TICKETS_BY_CONTENT": {},
+      "GENERATE_PASSWORD": {},
+      "GENERATE_SECURE_LINK": {},
+      "GET_FIELDS_AGENT_CAN_UPDATE": {},
+      "GET_FIELD_OPTIONS": {},
+      "GET_SYNCED_DEVICE_COUNTS": {},
+      "GET_TICKET_SUMMARIES": {},
+      "LIST_END_CLIENT_COMPANIES": {},
+      "LIST_SYNCED_DEVICES": {},
+      "LOOKUP_AVAILABLE": {},
+      "RECALL_MEMORY": {},
+      "REVIEW_PAST_RUN": {},
+      "SEND_EMAIL_TO_INTERNAL_TEAM": {
+        "ask_for_feedback": false,
+        "emails": [
+          "Kodi.Todd@framewerx.ca",
+          "Stephen.Luong@framewerx.ca",
+          "ben.alsfeld@framewerx.ca"
+        ]
+      },
+      "SEND_TEAMS_MESSAGE_TO_INTERNAL_TEAM": {
+        "allowed_users": [
+          {
+            "id": "31f43227-e9e1-4cb6-8cb8-97966acf2b1b",
+            "name": "Kodi Todd"
+          }
+        ],
+        "limit_to_allowed_users": true
+      },
+      "UPDATE_TICKET_FIELDS": {
+        "fields_allowed_to_update": [
+          "STATUS"
+        ]
+      }
+    }
+  },
+  "trigger_type": "TRIGGERED",
+  "version_timestamp": "2026-06-26T22:30:39.017850Z"
+}

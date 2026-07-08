@@ -1,0 +1,101 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(x) script-enhancement",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-26T17:56:56.166770Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(x) script-enhancement",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-12T22:21:18.980930Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(x) script-enhancement",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-10T20:59:02.305301Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(x) script-enhancement (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-10T20:56:42.299454Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(staging) script-enhancement (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-10T20:48:35.851778Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(staging) script-enhancement (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T21:05:30.384101Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(staging) script-enhancement (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T21:05:30.358611Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(v1.1.0) script-enhancement (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T21:05:12.165185Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23778",
+    "name": "(v1.1.0) script-enhancement (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T21:05:12.134036Z"
+  }
+]

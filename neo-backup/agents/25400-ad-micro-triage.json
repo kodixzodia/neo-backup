@@ -1,0 +1,556 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "TRIAGE_TICKET",
+      "id": "1422fbcf-fd01-4940-bd35-43aa8dabf636",
+      "input_as_dict": {
+        "fields_to_triage": [
+          {
+            "allow_removing_field": false,
+            "consider_sub_issue_types_at": true,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-0-input-as-dict-fields-to-triage-0-custom-instructions.md",
+            "field_name": "issueType",
+            "type_predefined_options": [],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-0-input-as-dict-fields-to-triage-1-custom-instructions.md",
+            "field_name": "contact",
+            "save_original_contact_as_additional_contact": false,
+            "use_client_primary_contact_if_unable_to_triage": false,
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-0-input-as-dict-fields-to-triage-2-custom-instructions.md",
+            "field_name": "title",
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-0-input-as-dict-fields-to-triage-3-custom-instructions.md",
+            "field_name": "queue",
+            "predefined_options": [],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-0-input-as-dict-fields-to-triage-4-custom-instructions.md",
+            "field_name": "priority",
+            "ignore_neo_instructions_for_priority": false,
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-0-input-as-dict-fields-to-triage-5-custom-instructions.md",
+            "field_name": "ticketCategory",
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-0-input-as-dict-fields-to-triage-6-custom-instructions.md",
+            "field_name": "company",
+            "search_company_by": [
+              "COMPANY_ID",
+              "COMPANY_NAME",
+              "COMPANY_SITE_NAME",
+              "CONTACT_EMAIL",
+              "CONTACT_FULL_NAME"
+            ],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "billingCode",
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "estimatedHours",
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "subIssueType",
+            "subtype_predefined_options": [],
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "ticketType",
+            "use_custom_instructions": false
+          }
+        ],
+        "fields_to_triage_2_custom_instructions": "When the ticket specifically states the priority, use that priority, it will begin with the statement\nHow urgent is your request?",
+        "fields_to_triage_8_custom_instructions": "-If a ticket comes from T2 NOC (contact email empower-noc@kaseya.com) regarding FWBU03 for storage and backup issues should be assigned to ticketCategory 205 Problem\n-Make no other ticketCategory Changes otherwise during triage if they match the above fields",
+        "move_to_board": false,
+        "target_board_or_queue_name": null
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ADD_TICKET_NOTE",
+      "id": "2a05a44e-e640-4d91-bbde-6ce63ce0a75d",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-1-input-as-dict-custom-instructions.md",
+        "note_type": "Internal Note",
+        "use_custom_instructions": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "NOTIFY_TICKET_CONTACT",
+      "id": "7547b907-a9b8-4188-8fd0-bc7ccbc142f8",
+      "input_as_dict": {
+        "autotask_note_publish_name": "All Autotask Users",
+        "autotask_note_type_name": "Email Note",
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/25400-ad-micro-triage/actions-2-input-as-dict-custom-instructions.md",
+        "include_random_delay": false,
+        "notification_mode": "CUSTOM_TICKET_NOTE",
+        "skip_notifications_for_closed_tickets": true,
+        "use_custom_instructions": true,
+        "use_udf_field_to_trigger_autotask_workflow": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "9d65b2db-7144-41eb-81bf-80606a60eaf9",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": null,
+          "new_status": "Plan Req - Waiting Review"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "9f1084e0-1f87-4b88-9ca3-6fe086dab897",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AD Micro Technology Inc. ",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AVISO FINANCIAL INC. (TORONTO)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AVISO FINANCIAL INC. (VANCOUVER)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AVISO WEALTH INC.(MONTREAL)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "CB Supplies",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Canfor",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Charlie Chocolate Factory",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Charlie's Chocolate Factory Ltd",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Concord Pacific",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Cowley & Company",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "DISTRICT DEVELOPMENTS CORP",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Dayton Mills Construction Ltd",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "District Group",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Fine Choice Foods",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "First Nations Fisheries Council",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Glentel",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Global Watch",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Grand View Distribution",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Kiewit",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Laughlin & Company",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Laughlinlaw & Company",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Magellen Developments (20/20) Inc.",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Milltown Marina & Boatyard Ltd.",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Milltown Marina",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Musqueam Capital Corporation",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "NGM",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Northview Golf & Country Club",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Northview Golf and Country Club",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Pacific Rim Industrial Insulation",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Richmond Christian School",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Royal Bank of Canada",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Shato Holdings Ltd.",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SkyLink Guideway Partners",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Steveston Medical Clinic",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "TGCC Management LLP",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "TWNation",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Taylor Valley Construction Ltd",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Truvera Trust Corporation",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Tsawwassen Golf & Country Club Ltd",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "UGC - University Golf ",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Union Gospel Mission",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "University Golf Club",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Uniwell International Enterprises Corp.",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Viacore Solutions",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Wong's Insurance Services Ltd.",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Wongs Insurance",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Wood Fibre LNG",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "World Duty Free Group",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Worldsource Wealth Management",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "field": "creatorResourceID",
+                "id": null,
+                "operator": "!=",
+                "value": "Kodi Todd",
+                "valueProviderInput": null
+              }
+            ]
+          },
+          "custom_field_conditions": {
+            "combinator": "and",
+            "conditions": []
+          },
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "25400",
+  "integrations": null,
+  "name": "ad-micro-triage",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "TRIGGERED"
+}

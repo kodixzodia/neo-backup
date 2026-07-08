@@ -1,0 +1,303 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "BUILD_MESSAGE",
+      "id": "03fcf117-a3c6-46bf-99f7-70a9c18eb4e0",
+      "input_as_dict": {
+        "include_company_custom_fields": false,
+        "include_service_call_details": false,
+        "include_ticket_custom_fields": false,
+        "instructions": "Acknowledge receipt of the ticket and confirm it has been received for review.\n\nDo not provide troubleshooting steps, attempt diagnosis, request additional information, discuss technician availability, provide scheduling details, or estimate response/resolution times.\n\nKeep responses brief, professional, and limited to acknowledging receipt of the ticket.",
+        "message_type": "CUSTOMER_FACING"
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "115eb0a1-a96e-4290-a08f-704a9b3b5cb7",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          },
+          "custom_field_conditions": null,
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "TRIAGE_TICKET",
+      "id": "52c27882-c25f-4988-b6b8-002fe2ae9a49",
+      "input_as_dict": {
+        "fields_to_triage": [
+          {
+            "allow_removing_field": false,
+            "consider_sub_issue_types_at": true,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-0-custom-instructions.md",
+            "field_name": "issueType",
+            "type_predefined_options": [],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_field_name": "AI Eligibility",
+            "custom_field_options_source": "FIXED_LIST",
+            "custom_field_possible_options": [
+              "Eligible",
+              "Ineligible"
+            ],
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-1-custom-instructions.md",
+            "field_name": "customFields",
+            "options_source_company_custom_field_name": null,
+            "options_source_external_api_url": null,
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-2-custom-instructions.md",
+            "field_name": "contact",
+            "save_original_contact_as_additional_contact": false,
+            "use_client_primary_contact_if_unable_to_triage": false,
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-3-custom-instructions.md",
+            "field_name": "priority",
+            "ignore_neo_instructions_for_priority": false,
+            "predefined_options": [],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-4-custom-instructions.md",
+            "field_name": "queue",
+            "predefined_options": [
+              {
+                "id": "29682833",
+                "name": "100 SD-Issues"
+              },
+              {
+                "id": "29683480",
+                "name": "500 S-Pre-Sale"
+              },
+              {
+                "id": "29683482",
+                "name": "700 Development"
+              },
+              {
+                "id": "29683485",
+                "name": "420 PS-Projects"
+              },
+              {
+                "id": "29683486",
+                "name": "300 SA-TAM"
+              },
+              {
+                "id": "29683495",
+                "name": "110 SD-Access"
+              },
+              {
+                "id": "29683498",
+                "name": "310 SA-vCIO"
+              },
+              {
+                "id": "29683499",
+                "name": "320 SA-Corrective"
+              },
+              {
+                "id": "29683500",
+                "name": "410 PS-Deployments"
+              },
+              {
+                "id": "29683501",
+                "name": "220 CS-Security"
+              },
+              {
+                "id": "29683502",
+                "name": "299 CS-Automation"
+              },
+              {
+                "id": "29683503",
+                "name": "200 CS-Routine"
+              },
+              {
+                "id": "29683505",
+                "name": "400 PS-Request"
+              },
+              {
+                "id": "29683519",
+                "name": "205 CS-Problem"
+              },
+              {
+                "id": "29683522",
+                "name": "800 DataCenter"
+              },
+              {
+                "id": "8",
+                "name": "210 CS-Monitoring Alert"
+              }
+            ],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-5-custom-instructions.md",
+            "field_name": "title",
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-6-custom-instructions.md",
+            "field_name": "ticketCategory",
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-2-input-as-dict-fields-to-triage-7-custom-instructions.md",
+            "field_name": "company",
+            "search_company_by": [
+              "COMPANY_NAME",
+              "COMPANY_SITE_NAME",
+              "CONTACT_EMAIL",
+              "CONTACT_FULL_NAME"
+            ],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": null,
+            "field_name": "billingCode",
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "estimatedHours",
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "subIssueType",
+            "subtype_predefined_options": [],
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "ticketType",
+            "use_custom_instructions": false
+          }
+        ],
+        "move_to_board": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ADD_TICKET_NOTE",
+      "id": "6f8ce4df-582f-460f-be7d-1cb7acf59674",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-3-input-as-dict-custom-instructions.md",
+        "note_type": "Internal Note",
+        "use_custom_instructions": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_SIMILAR_TICKETS",
+      "id": "92a395d6-b9e9-402c-8e27-d57008453e9d",
+      "input_as_dict": {
+        "board_or_queues": [],
+        "days_to_look_back": 30,
+        "filter_by_board": false,
+        "relevancy_threshold": 0.7,
+        "similar_tickets_count": 5,
+        "ticket_similarity_type": "RELEVANT_TICKETS_FOR_COMPANY"
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "97eceadd-9baa-4f39-bfe8-c7b57d92dcb8",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": null,
+          "new_status": "Ready for Next Steps"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "NOTIFY_TICKET_CONTACT",
+      "id": "cc4e1dad-8af7-44ba-9346-f710a02fd01d",
+      "input_as_dict": {
+        "autotask_wf_udf_field_name": "Notify Contact by Email",
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/25413-test-triage/actions-6-input-as-dict-custom-instructions.md",
+        "include_random_delay": false,
+        "notification_mode": "TICKET_NOTE",
+        "skip_notifications_for_closed_tickets": true,
+        "use_custom_instructions": true,
+        "use_udf_field_to_trigger_autotask_workflow": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "25413",
+  "integrations": null,
+  "name": "test-triage",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "TRIGGERED"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CONVERSATIONAL",
+    "entity_type": "NONE",
+    "id": "24524",
+    "name": "FIO Test Agent",
+    "state": "ENABLED",
+    "trigger_type": "NONE",
+    "version_timestamp": "2026-06-22T17:31:42.546227Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CONVERSATIONAL",
+    "entity_type": "NONE",
+    "id": "24524",
+    "name": "FIO Test Agent",
+    "state": "ENABLED",
+    "trigger_type": "NONE",
+    "version_timestamp": "2026-06-22T17:10:23.984341Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CONVERSATIONAL",
+    "entity_type": "NONE",
+    "id": "24524",
+    "name": "FIO Test Agent",
+    "state": "ENABLED",
+    "trigger_type": "NONE",
+    "version_timestamp": "2026-06-22T16:39:16.465700Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CONVERSATIONAL",
+    "entity_type": "NONE",
+    "id": "24524",
+    "name": "FIO Test Agent",
+    "state": "ENABLED",
+    "trigger_type": "NONE",
+    "version_timestamp": "2026-06-15T22:34:13.914596Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CONVERSATIONAL",
+    "entity_type": "NONE",
+    "id": "24524",
+    "name": "FIO Test Agent",
+    "state": "ENABLED",
+    "trigger_type": "NONE",
+    "version_timestamp": "2026-06-15T22:25:57.883562Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CONVERSATIONAL",
+    "entity_type": "NONE",
+    "id": "24524",
+    "name": "FIO Test Agent",
+    "state": "ENABLED",
+    "trigger_type": "NONE",
+    "version_timestamp": "2026-06-15T22:10:44.544534Z"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "25059",
+    "name": "(ad-micro) orchestration-agent",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T17:53:17.138281Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "25059",
+    "name": "(ad-micro) orchestration-agent",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-02T15:14:59.755717Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "25059",
+    "name": "(ad-micro) orchestration-agent",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-30T13:56:36.509741Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "25059",
+    "name": "(ad-micro) orchestration-agent",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-26T23:40:23.500412Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "25059",
+    "name": "(ad-micro) orchestration-agent",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-26T22:52:52.308689Z"
+  }
+]
