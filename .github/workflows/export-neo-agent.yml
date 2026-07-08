@@ -1,0 +1,47 @@
+name: Export Neo agent pilot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *" # nightly UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Export Neo agent
+        env:
+          NEO_API_KEY: ${{ secrets.NEO_API_KEY }}
+          NEO_BASE_URL: ${{ secrets.NEO_BASE_URL }}
+        run: |
+          python scripts/export_neo_agent.py \
+            --agent-id 23782 \
+            --agent-name service-desk-engineer \
+            --out neo-backup \
+            --include-versions
+
+      - name: Open PR with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: neo/export-service-desk-engineer
+          title: "Backup Neo agent 23782 - service-desk-engineer"
+          commit-message: "Backup Neo agent 23782 - service-desk-engineer"
+          body: "Automated export of Neo agent 23782 and version history."
+          add-paths: |
+            neo-backup/**
