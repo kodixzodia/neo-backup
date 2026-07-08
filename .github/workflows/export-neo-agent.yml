@@ -17,12 +17,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install deps
+      - name: Install dependencies
         run: pip install requests
 
       - name: Export Neo agent
@@ -36,12 +36,12 @@ jobs:
             --out neo-backup \
             --include-versions
 
-      - name: Open PR with changes
+      - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
           branch: neo/export-service-desk-engineer
           title: "Backup Neo agent 23782 - service-desk-engineer"
           commit-message: "Backup Neo agent 23782 - service-desk-engineer"
-          body: "Automated export of Neo agent 23782 and version history."
+          body: "Automated export of Neo agent 23782, resolved snapshot, and version history."
           add-paths: |
             neo-backup/**
