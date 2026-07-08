@@ -22,7 +22,12 @@ def slugify(value: str) -> str:
     return re.sub(r"-{2,}", "-", value).strip("-") or "agent"
 
 
-def api_get(session: requests.Session, base_url: str, path: str, params: Dict[str, str] | None = None) -> Dict[str, Any]:
+def api_get(
+    session: requests.Session,
+    base_url: str,
+    path: str,
+    params: Dict[str, str] | None = None,
+) -> Dict[str, Any]:
     response = session.get(f"{base_url.rstrip('/')}{path}", params=params, timeout=60)
     try:
         response.raise_for_status()
@@ -33,7 +38,10 @@ def api_get(session: requests.Session, base_url: str, path: str, params: Dict[st
 
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
 
 def main() -> int:
@@ -55,15 +63,32 @@ def main() -> int:
     out_dir = Path(args.out)
 
     session = requests.Session()
-    session.headers.update({
-        "Authorization": f"Bearer {api_key}",
-        "Accept": "application/json",
-    })
+    session.headers.update(
+        {
+            "Authorization": f"Bearer {api_key}",
+            "Accept": "application/json",
+        }
+    )
 
     print(f"Fetching agent {agent_id}...")
     agent_payload = api_get(session, base_url, f"/agents/{agent_id}")
-    agent_data = agent_payload.get("data", agent_payload)
-    write_json(out_dir / "agents" / f"{agent_id}-{safe_name}.json", agent_data)
+    write_json(
+        out_dir / "agents" / f"{agent_id}-{safe_name}.json",
+        agent_payload.get("data", agent_payload),
+    )
+
+    snapshot_timestamp = datetime.now(timezone.utc).isoformat()
+    print(f"Fetching resolved snapshot for {agent_id} at {snapshot_timestamp}...")
+    snapshot_payload = api_get(
+        session,
+        base_url,
+        f"/agents/{agent_id}/version-at",
+        params={"timestamp": snapshot_timestamp},
+    )
+    write_json(
+        out_dir / "agent_snapshots" / f"{agent_id}-{safe_name}.json",
+        snapshot_payload.get("data", snapshot_payload),
+    )
 
     version_count = 0
     if args.include_versions:
@@ -74,14 +99,17 @@ def main() -> int:
             version_count = len(versions_data)
         write_json(out_dir / "agent_versions" / f"{agent_id}-{safe_name}.json", versions_data)
 
-    write_json(out_dir / "manifest.json", {
-        "exported_at": datetime.now(timezone.utc).isoformat(),
-        "base_url": base_url,
-        "agent_id": agent_id,
-        "agent_name": args.agent_name.strip(),
-        "include_versions": args.include_versions,
-        "version_count": version_count,
-    })
+    write_json(
+        out_dir / "manifest.json",
+        {
+            "exported_at": datetime.now(timezone.utc).isoformat(),
+            "base_url": base_url,
+            "agent_id": agent_id,
+            "agent_name": args.agent_name.strip(),
+            "include_versions": args.include_versions,
+            "version_count": version_count,
+        },
+    )
 
     print(f"Done. Wrote export to {out_dir}")
     return 0
