@@ -1,0 +1,123 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(v1.0) corrective-actions-closure",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-08T19:35:09.652303Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(v1.0) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-19T22:00:03.688285Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(v1.0) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-12T22:11:09.163404Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(v1.0) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:23:12.857944Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(v1.0) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:23:12.828004Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(staging) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:07:35.987066Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(staging) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:07:35.957372Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(staging) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-20T17:29:41.287102Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(staging) corrective-actions-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-20T17:29:41.259877Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(staging) corrective-actions-closure (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-20T17:29:20.964829Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23652",
+    "name": "(staging) corrective-actions-closure (Copy)",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-20T17:29:20.935624Z"
+  }
+]

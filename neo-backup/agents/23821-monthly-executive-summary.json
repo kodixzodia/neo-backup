@@ -1,0 +1,115 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "NOTIFY_USERS",
+      "id": "6e5d38bf-b495-4766-a29a-fff1a89c8758",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "emails": [
+          "Kodi.todd@framewerx.ca"
+        ],
+        "include_email_subject": true,
+        "notification_channel": "EMAIL",
+        "use_custom_instructions": false,
+        "users": []
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "d414e257-8802-47ba-82c6-1d5c758adc2c",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "single_page": false,
+        "skip_calculated_fields_on_large_datasets": false,
+        "target_ticket_id": null,
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "field": "days_since_ticket_was_created",
+                "id": "d342912d-b27c-4f16-92fe-825458085314",
+                "operator": "<=",
+                "value": "2",
+                "valueProviderInput": null
+              },
+              {
+                "field": "queueID",
+                "id": null,
+                "operator": "!=",
+                "value": "998 Monitoring Test-Debug",
+                "valueProviderInput": null
+              }
+            ]
+          },
+          "custom_field_conditions": null,
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "EXECUTIVE_SUMMARY",
+      "id": "da2e0a2a-04a6-4bce-a73e-7007becd25e7",
+      "input_as_dict": {
+        "include_individual_tickets_resolutions": false,
+        "user_query": "Summarize the work done"
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "NOTIFY_USERS",
+      "id": "e78b36de-b3e0-4088-b407-94c86c6d9a65",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "notification_channel": "TEAMS",
+        "use_custom_instructions": false,
+        "users": [
+          {
+            "id": "31f43227-e9e1-4cb6-8cb8-97966acf2b1b",
+            "name": "Kodi Todd"
+          }
+        ]
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "23821",
+  "integrations": null,
+  "name": "Monthly Executive Summary",
+  "state": "DISABLED",
+  "toolbox": null,
+  "trigger_type": "SCHEDULED"
+}

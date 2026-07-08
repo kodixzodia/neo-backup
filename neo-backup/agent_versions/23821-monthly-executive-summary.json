@@ -1,0 +1,46 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23821",
+    "name": "Monthly Executive Summary",
+    "state": "DISABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-06-19T16:49:48.717700Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23821",
+    "name": "Monthly Executive Summary",
+    "state": "ENABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-05-26T22:51:31.170807Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23821",
+    "name": "Monthly Executive Summary",
+    "state": "ENABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-05-26T22:23:33.980968Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23821",
+    "name": "Monthly Executive Summary",
+    "state": "ENABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-05-26T22:22:48.570313Z"
+  }
+]

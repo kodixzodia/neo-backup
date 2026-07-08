@@ -1,0 +1,169 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "67bc0b57-3b67-4013-8598-c3f104281feb",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "single_page": false,
+        "skip_calculated_fields_on_large_datasets": false,
+        "target_ticket_id": null,
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AD Micro Technology Inc. ",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AVISO FINANCIAL INC. (TORONTO)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AVISO FINANCIAL INC. (VANCOUVER)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "AVISO WEALTH INC.(MONTREAL)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Fine Choice Foods",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "TWNation",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Taylor Valley Construction Ltd",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "UGC - University Golf ",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "010 Client Portal",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "020 Triage",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Plan Req - Waiting Review",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Plan Req",
+                    "valueProviderInput": null
+                  }
+                ]
+              }
+            ]
+          },
+          "custom_field_conditions": {
+            "combinator": "and",
+            "conditions": []
+          },
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "TRIGGER_ANOTHER_WORKFLOW",
+      "id": "72d1f9cb-619e-47a0-b0bb-366d9bbd5b0a",
+      "input_as_dict": {
+        "bypass_filter_ticket_conditions": false,
+        "workflow_id_to_trigger": 25400
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "25410",
+  "integrations": null,
+  "name": "force-triage (AD)",
+  "state": "DISABLED",
+  "toolbox": null,
+  "trigger_type": "SCHEDULED",
+  "version_timestamp": "2026-07-07T20:43:08.832808Z"
+}

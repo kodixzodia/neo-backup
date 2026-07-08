@@ -1,0 +1,57 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25410",
+    "name": "force-triage (AD)",
+    "state": "DISABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-07-07T20:43:08.832808Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25410",
+    "name": "force-triage (AD)",
+    "state": "ENABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-07-07T20:11:18.356062Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25410",
+    "name": "force-triage (AD)",
+    "state": "ENABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-07-07T19:54:13.799181Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25410",
+    "name": "force-triage (AD)",
+    "state": "ENABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-07-07T19:45:18.024414Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25410",
+    "name": "force-triage",
+    "state": "ENABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-07-07T19:44:59.058677Z"
+  }
+]

@@ -1,0 +1,189 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-08T21:35:35.194853Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T20:12:40.316847Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T17:52:20.909332Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T17:50:59.237143Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T17:26:35.566750Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-06T22:21:16.183551Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-26T23:11:42.882008Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-26T22:08:49.840263Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-19T21:58:39.885078Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-19T21:57:56.505957Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-12T22:10:10.386290Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-10T21:48:03.398557Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-29T21:53:54.295103Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:19:53.095183Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.3) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:18:46.289696Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(staging) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:06:50.858043Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(staging) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-20T17:11:50.278583Z"
+  }
+]
