@@ -199,7 +199,7 @@
   ],
   "agent_settings": {
     "custom_instructions": "[see separate markdown file]",
-    "custom_instructions_file": "neo-backup/agent_text/custom-instructions/23782-service-desk-engineer.md",
+    "custom_instructions_file": "agent_text/custom-instructions/23782-service-desk-engineer/agent-settings-custom-instructions.md",
     "model": null,
     "reasoning_effort": null,
     "report_test_via": "TEAMS_MESSAGE_TO_INTERNAL_TEAM",

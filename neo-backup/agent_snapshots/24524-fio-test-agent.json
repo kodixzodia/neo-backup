@@ -1,0 +1,38 @@
+{
+  "access": "ALL_USERS",
+  "actions": [],
+  "agent_settings": {
+    "custom_instructions": "[see separate markdown file]",
+    "custom_instructions_file": "agent_text/custom-instructions/24524-fio-test-agent/agent-settings-custom-instructions.md",
+    "model": null,
+    "reasoning_effort": null,
+    "report_test_via": "DASHBOARD_MESSAGE",
+    "subagent_fanout_enabled": true,
+    "test_mode": false,
+    "til_channel": "CHAT",
+    "trigger_mode": "MENTION_ONLY"
+  },
+  "audience": "MSP",
+  "autonomy_type": "CONVERSATIONAL",
+  "entity_type": "NONE",
+  "id": "24524",
+  "integrations": null,
+  "name": "FIO Test Agent",
+  "state": "ENABLED",
+  "toolbox": {
+    "tool_settings_by_type": {
+      "END_USER_CREATE_TICKET": {
+        "autotask_priority_id": "2",
+        "autotask_queue_id": "29682833",
+        "autotask_ticket_type_id": "2",
+        "connectwise_board_id": null,
+        "halo_ticket_type_id": null,
+        "initial_status_id": "8",
+        "resolved_status_id": null,
+        "source_id": "-2"
+      }
+    }
+  },
+  "trigger_type": "NONE",
+  "version_timestamp": "2026-06-22T17:31:42.546227Z"
+}
