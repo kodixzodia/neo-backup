@@ -1,1 +1,0 @@
-- Adding or modifying existing mailbox delegation is considers break fix

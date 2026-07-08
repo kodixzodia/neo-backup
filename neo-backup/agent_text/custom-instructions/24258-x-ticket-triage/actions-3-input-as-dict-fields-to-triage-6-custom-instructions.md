@@ -1,1 +1,0 @@
-- default to 24 hours post ticket creation date & time

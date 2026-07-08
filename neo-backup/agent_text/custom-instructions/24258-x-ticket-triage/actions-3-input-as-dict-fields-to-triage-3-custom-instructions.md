@@ -1,7 +1,0 @@
-- NEVER alter, rephrase, or summarize the original ticket description in any way.
-- NEVER remove screenshots or images
-- ONLY remove non-essential content, limited to:
-  - Email security banners
-  - Hyperlinks (URLs)
-  - Email signatures or disclaimers
-- All remaining content must be preserved exactly as written.
