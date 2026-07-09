@@ -1,0 +1,27 @@
+{
+  "access": "ALL_USERS",
+  "actions": [],
+  "agent_settings": {
+    "custom_instructions": "[see separate markdown file]",
+    "custom_instructions_file": "agent_text/custom-instructions/25526-internal-knowledge-assistant/agent-settings-custom-instructions.md",
+    "model": null,
+    "reasoning_effort": null,
+    "report_test_via": "INTERNAL_TICKET_NOTE",
+    "subagent_fanout_enabled": false,
+    "test_mode": false,
+    "til_channel": "CHAT",
+    "trigger_mode": "MENTION_ONLY"
+  },
+  "audience": "MSP",
+  "autonomy_type": "CONVERSATIONAL",
+  "entity_type": "TICKET",
+  "id": "25526",
+  "integrations": null,
+  "name": "Internal Knowledge Assistant",
+  "state": "ENABLED",
+  "toolbox": {
+    "tool_settings_by_type": {}
+  },
+  "trigger_type": "NONE",
+  "version_timestamp": "2026-07-09T16:46:11.341228Z"
+}

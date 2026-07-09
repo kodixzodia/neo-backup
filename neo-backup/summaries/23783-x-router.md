@@ -6,9 +6,10 @@
 - Type: `CHAINED_ACTIONS`
 - Trigger: `TRIGGERED`
 - Entity: `TICKET`
-- Version records exported: `14`
+- Version records exported: `15`
 - Integrations: 0
-- Extracted text files: 3
+- Extracted text files: 4
+- `agent_text/custom-instructions/23783-x-router/actions-1-input-as-dict-custom-instructions.md`
 - `agent_text/custom-instructions/23783-x-router/actions-2-input-as-dict-custom-instructions.md`
 - `agent_text/custom-instructions/23783-x-router/actions-3-input-as-dict-custom-instructions.md`
 - `agent_text/custom-instructions/23783-x-router/actions-5-input-as-dict-custom-instructions.md`
@@ -21,4 +22,4 @@
 - `agent_text/custom-instructions/` = extracted multiline instructions for clean diffs
 - `summaries/` = short human-readable summaries
 
-_Exported at 2026-07-08T22:20:47.439037+00:00_
+_Exported at 2026-07-09T19:05:53.151742+00:00_

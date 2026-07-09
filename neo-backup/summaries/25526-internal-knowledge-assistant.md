@@ -1,17 +1,17 @@
-# Neo agent export: FIO Test Agent
+# Neo agent export: Internal Knowledge Assistant
 
-- Agent ID: `24524`
-- Export label: `FIO Test Agent`
+- Agent ID: `25526`
+- Export label: `Internal Knowledge Assistant`
 - State: `ENABLED`
 - Type: `CONVERSATIONAL`
 - Trigger: `NONE`
-- Entity: `NONE`
-- Version records exported: `6`
+- Entity: `TICKET`
+- Version records exported: `1`
 - Integrations: 0
-- Tools configured: 1
-- Tool sample: END_USER_CREATE_TICKET
+- Tools configured: 0
+- Tool sample: 
 - Extracted text files: 1
-- `agent_text/custom-instructions/24524-fio-test-agent/agent-settings-custom-instructions.md`
+- `agent_text/custom-instructions/25526-internal-knowledge-assistant/agent-settings-custom-instructions.md`
 
 ## Export contents
 
@@ -21,4 +21,4 @@
 - `agent_text/custom-instructions/` = extracted multiline instructions for clean diffs
 - `summaries/` = short human-readable summaries
 
-_Exported at 2026-07-09T19:05:57.311543+00:00_
+_Exported at 2026-07-09T19:06:00.749809+00:00_

@@ -1,5 +1,5 @@
 {
-  "agent_count": 37,
+  "agent_count": 38,
   "agents": [
     {
       "agent_file": "agents/22504-v-1-0-dark-web-alert-triage.json",
@@ -50,7 +50,7 @@
       "state": "ENABLED",
       "summary_file": "summaries/23618-v1-0-critical-alert-agent.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 28,
+      "versions_count": 29,
       "versions_file": "agent_versions/23618-v1-0-critical-alert-agent.json"
     },
     {
@@ -245,7 +245,7 @@
       "state": "ENABLED",
       "summary_file": "summaries/23783-x-router.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 14,
+      "versions_count": 15,
       "versions_file": "agent_versions/23783-x-router.json"
     },
     {
@@ -440,7 +440,7 @@
       "state": "ENABLED",
       "summary_file": "summaries/25350-black-point-closer.md",
       "trigger_type": "SCHEDULED",
-      "versions_count": 7,
+      "versions_count": 13,
       "versions_file": "agent_versions/25350-black-point-closer.json"
     },
     {
@@ -481,24 +481,37 @@
       "trigger_type": "TRIGGERED",
       "versions_count": 7,
       "versions_file": "agent_versions/25413-test-triage.json"
+    },
+    {
+      "agent_file": "agents/25526-internal-knowledge-assistant.json",
+      "autonomy_type": "CONVERSATIONAL",
+      "entity_type": "TICKET",
+      "id": "25526",
+      "name": "Internal Knowledge Assistant",
+      "snapshot_file": "agent_snapshots/25526-internal-knowledge-assistant.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25526-internal-knowledge-assistant.md",
+      "trigger_type": "NONE",
+      "versions_count": 1,
+      "versions_file": "agent_versions/25526-internal-knowledge-assistant.json"
     }
   ],
   "base_url": "https://api.neoagent.io/public-api",
   "counts_by_state": {
     "DISABLED": 16,
-    "ENABLED": 21
+    "ENABLED": 22
   },
   "counts_by_trigger_type": {
-    "NONE": 2,
+    "NONE": 3,
     "SCHEDULED": 7,
     "TRIGGERED": 28
   },
   "counts_by_type": {
     "AGENTIC": 19,
     "CHAINED_ACTIONS": 16,
-    "CONVERSATIONAL": 2
+    "CONVERSATIONAL": 3
   },
-  "exported_at": "2026-07-08T22:20:53.861261+00:00",
+  "exported_at": "2026-07-09T19:06:00.749942+00:00",
   "include_versions": true,
   "state_filter": "ENABLED"
 }

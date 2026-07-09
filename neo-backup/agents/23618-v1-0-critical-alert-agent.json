@@ -1121,6 +1121,10 @@
         "emails": [
           "3220c7dd.framewerx.ca@ca.teams.ms"
         ]
+      },
+      "SEND_TEAMS_MESSAGE_TO_INTERNAL_TEAM": {
+        "allowed_users": [],
+        "limit_to_allowed_users": false
       }
     }
   },

@@ -8,6 +8,17 @@
     "name": "(v1.0) critical-alert-agent",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-09T17:29:03.289932Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23618",
+    "name": "(v1.0) critical-alert-agent",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-06-26T22:31:40.886926Z"
   },
   {

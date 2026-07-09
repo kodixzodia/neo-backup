@@ -18,11 +18,16 @@
       }
     },
     {
-      "action_type": "NOTIFY_TICKET_RESOURCE",
-      "id": "2cd62a0c-68ce-414a-bb74-430270951650",
+      "action_type": "ASSIGN_TICKET",
+      "id": "402c35c0-9d5b-4680-a67c-07b898612042",
       "input_as_dict": {
-        "ask_for_feedback": false,
-        "notification_channel": "Teams",
+        "create_owner_entry": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-x-router/actions-1-input-as-dict-custom-instructions.md",
+        "send_email_to_owner": true,
+        "skip_if_already_assigned": false,
+        "target_status_name": "Ready for Next Steps",
+        "update_ticket_status": true,
         "use_custom_instructions": false
       },
       "output": {
@@ -30,17 +35,24 @@
       }
     },
     {
-      "action_type": "ASSIGN_TICKET",
-      "id": "402c35c0-9d5b-4680-a67c-07b898612042",
+      "action_type": "NOTIFY_USERS",
+      "id": "5ee392d9-69ca-4bb2-a909-2c9d53bd050d",
       "input_as_dict": {
-        "create_owner_entry": false,
+        "ask_for_feedback": false,
         "custom_instructions": "[see separate markdown file]",
         "custom_instructions_file": "agent_text/custom-instructions/23783-x-router/actions-2-input-as-dict-custom-instructions.md",
-        "send_email_to_owner": true,
-        "skip_if_already_assigned": false,
-        "target_status_name": "Ready for Next Steps",
-        "update_ticket_status": true,
-        "use_custom_instructions": false
+        "notification_channel": "TEAMS",
+        "use_custom_instructions": true,
+        "users": [
+          {
+            "id": "227b04cd-5c09-4d79-ba65-7b69e0de0890",
+            "name": "Devon Young"
+          },
+          {
+            "id": "31f43227-e9e1-4cb6-8cb8-97966acf2b1b",
+            "name": "Kodi Todd"
+          }
+        ]
       },
       "output": {
         "credits_consumed": 0
@@ -149,7 +161,16 @@
           "workload_days_type": "BUSINESS",
           "workload_difference_threshold": 3
         },
-        "guided_instructions": [],
+        "guided_instructions": [
+          {
+            "answer": "Notify Team Leads via Teams \nAssign to most skilled technician within the respective department (service desk, professional services, centralized services) ",
+            "question": "What should Neo do when everyone is busy and a critical ticket comes in?"
+          },
+          {
+            "answer": "P1 = Client Down or Critical Outage \nP2 = Single user blocked (cant sign in, computer wont start, can not work) \nP3 = request or low impact ",
+            "question": "How do you define priorities?"
+          }
+        ],
         "number_of_technicians_to_suggest": 1,
         "use_custom_instructions": true,
         "use_round_robin": false
@@ -315,5 +336,5 @@
   "state": "ENABLED",
   "toolbox": null,
   "trigger_type": "TRIGGERED",
-  "version_timestamp": "2026-07-08T20:12:41.946548Z"
+  "version_timestamp": "2026-07-09T15:42:23.401313Z"
 }

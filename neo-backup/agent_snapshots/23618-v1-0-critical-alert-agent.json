@@ -1121,9 +1121,13 @@
         "emails": [
           "3220c7dd.framewerx.ca@ca.teams.ms"
         ]
+      },
+      "SEND_TEAMS_MESSAGE_TO_INTERNAL_TEAM": {
+        "allowed_users": [],
+        "limit_to_allowed_users": false
       }
     }
   },
   "trigger_type": "TRIGGERED",
-  "version_timestamp": "2026-06-26T22:31:40.886926Z"
+  "version_timestamp": "2026-07-09T17:29:03.289932Z"
 }
