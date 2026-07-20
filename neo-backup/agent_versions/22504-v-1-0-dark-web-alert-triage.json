@@ -1,0 +1,112 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(v.1.0) dark-web-alert-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-26T22:45:25.356859Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(v.1.0) dark-web-alert-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-12T22:09:39.921247Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(v.1.0) dark-web-alert-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-26T21:54:26.726395Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(v.1.0) dark-web-alert-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:18:06.856183Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(v.2.2) dark-web-alert-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-19T15:48:09.437591Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(staging) dark-web-alert-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-13T20:26:10.894277Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(staging) dark_web_alert_triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-13T19:47:07.045848Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(staging) Dark Web Alert - Triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-08T15:11:28.721336Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(stage) Dark Web Alert - Triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-08T15:04:55.789185Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22504",
+    "name": "(stage) Dark Web Alert - Triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-08T15:02:57.815981Z"
+  }
+]

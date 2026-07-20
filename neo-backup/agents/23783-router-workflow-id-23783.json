@@ -1,0 +1,252 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "18538e35-2692-4896-b329-a5c7158139ad",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": null,
+          "new_status": "Ready for Next Steps"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ASSIGN_TICKET",
+      "id": "402c35c0-9d5b-4680-a67c-07b898612042",
+      "input_as_dict": {
+        "create_owner_entry": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-router-workflow-id-23783/actions-1-input-as-dict-custom-instructions.md",
+        "send_email_to_owner": true,
+        "skip_if_already_assigned": false,
+        "target_status_name": "Ready for Next Steps",
+        "update_ticket_status": true,
+        "use_custom_instructions": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "NOTIFY_USERS",
+      "id": "5ee392d9-69ca-4bb2-a909-2c9d53bd050d",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-router-workflow-id-23783/actions-2-input-as-dict-custom-instructions.md",
+        "notification_channel": "TEAMS",
+        "use_custom_instructions": true,
+        "users": [
+          {
+            "id": "227b04cd-5c09-4d79-ba65-7b69e0de0890",
+            "name": "Devon Young"
+          },
+          {
+            "id": "31f43227-e9e1-4cb6-8cb8-97966acf2b1b",
+            "name": "Kodi Todd"
+          }
+        ]
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "DISPATCH_TICKET",
+      "id": "a04c55e1-eed2-4286-8390-f063b7cd5af5",
+      "input_as_dict": {
+        "configure_message_settings": true,
+        "consider_company_continuity": false,
+        "consider_exclusion_rules": false,
+        "consider_similar_tickets": false,
+        "consider_teams_availability": false,
+        "consider_technician_calendar": true,
+        "consider_technician_profile": true,
+        "consider_technician_workload": true,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-router-workflow-id-23783/actions-3-input-as-dict-custom-instructions.md",
+        "dispatch_calendar_settings": {
+          "add_schedule_entry": false,
+          "consider_psa_working_hours": false,
+          "consider_us_holidays": false,
+          "days_in_the_future": 3,
+          "holiday_source": "PSA_HOLIDAYS"
+        },
+        "dispatch_exclusion_rules": {
+          "do_not_dispatch_if_owner_is_the_creator": false,
+          "do_not_dispatch_if_scheduled_entry_exists": false,
+          "do_not_dispatch_if_ticket_created_with_owner": false,
+          "filter_by_company_team": false,
+          "skip_if_already_assigned": false
+        },
+        "dispatch_expertise_settings": {
+          "include_profile": true,
+          "include_skills": false
+        },
+        "dispatch_message_settings": {
+          "include_reasoning_in_message": true,
+          "include_ticket_summary_in_message": true,
+          "number_of_technicians_to_suggest": 1
+        },
+        "dispatch_similar_tickets_settings": {
+          "days_to_look_back": 10,
+          "max_similar_tickets": 5
+        },
+        "dispatch_technician_settings": {
+          "dashboard_technician_pool": [
+            {
+              "id": "29682895",
+              "name": "Ben Alsfeld"
+            },
+            {
+              "id": "29682897",
+              "name": "Stephen Luong"
+            },
+            {
+              "id": "29682900",
+              "name": "Derek Truong"
+            },
+            {
+              "id": "29682903",
+              "name": "Daniel Leder"
+            },
+            {
+              "id": "29682929",
+              "name": "James Reid"
+            },
+            {
+              "id": "29682933",
+              "name": "Josh Reid"
+            },
+            {
+              "id": "29682942",
+              "name": "Kurt Verbeeck"
+            },
+            {
+              "id": "29682951",
+              "name": "Lavanya Tanwani"
+            },
+            {
+              "id": "29682952",
+              "name": "Deekshay Sethi"
+            },
+            {
+              "id": "29682973",
+              "name": "Michelle Ronnenkamp"
+            },
+            {
+              "id": "29682977",
+              "name": "Sol Walters"
+            },
+            {
+              "id": "29682986",
+              "name": "Billy Nguyen"
+            }
+          ],
+          "technician_pool_source": "DASHBOARD_POOL"
+        },
+        "dispatch_workload_settings": {
+          "assignment_history_window": 1,
+          "criteria": "NUMBER_OF_TICKETS_ASSIGNED",
+          "criteria_for_considering_tickets": "TICKET_LAST_UPDATE",
+          "include_tickets_worked_in_last_n_days": 2,
+          "include_workflow_assignment_history": true,
+          "workload_days_type": "BUSINESS",
+          "workload_difference_threshold": 3
+        },
+        "guided_instructions": [
+          {
+            "answer": "Notify Team Leads via Teams \nAssign to most skilled technician within the respective department (service desk, professional services, centralized services) ",
+            "question": "What should Neo do when everyone is busy and a critical ticket comes in?"
+          },
+          {
+            "answer": "P1 = Client Down or Critical Outage \nP2 = Single user blocked (cant sign in, computer wont start, can not work) \nP3 = request or low impact ",
+            "question": "How do you define priorities?"
+          }
+        ],
+        "number_of_technicians_to_suggest": 1,
+        "use_custom_instructions": true,
+        "use_round_robin": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "a1f48ba0-72c2-4fa6-9aea-3d62595590ee",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          },
+          "custom_field_conditions": {
+            "combinator": "and",
+            "conditions": [
+              {
+                "field": "AI Eligibility",
+                "operator": "=",
+                "value": "Ineligible"
+              }
+            ]
+          },
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ADD_TICKET_NOTE",
+      "id": "f47ad09a-dae1-4988-ac84-80065a123022",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23783-router-workflow-id-23783/actions-5-input-as-dict-custom-instructions.md",
+        "note_type": "Internal Note",
+        "use_custom_instructions": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "23783",
+  "integrations": null,
+  "name": "router (workflow ID:23783)",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "TRIGGERED"
+}

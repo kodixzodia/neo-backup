@@ -1,0 +1,3 @@
+- Only notify of critical tickets that need to be assigned but no technician is available
+- Describe Issue 
+- State that manual intervention is required

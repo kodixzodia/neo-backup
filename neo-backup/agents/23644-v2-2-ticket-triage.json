@@ -1,0 +1,708 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "TRIAGE_TICKET",
+      "id": "1422fbcf-fd01-4940-bd35-43aa8dabf636",
+      "input_as_dict": {
+        "fields_to_triage": [
+          {
+            "allow_removing_field": false,
+            "consider_sub_issue_types_at": true,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-0-input-as-dict-fields-to-triage-0-custom-instructions.md",
+            "field_name": "issueType",
+            "type_predefined_options": [],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-0-input-as-dict-fields-to-triage-1-custom-instructions.md",
+            "field_name": "contact",
+            "save_original_contact_as_additional_contact": false,
+            "use_client_primary_contact_if_unable_to_triage": false,
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-0-input-as-dict-fields-to-triage-2-custom-instructions.md",
+            "field_name": "company",
+            "search_company_by": [
+              "COMPANY_ID",
+              "COMPANY_NAME",
+              "COMPANY_SITE_NAME",
+              "CONTACT_EMAIL",
+              "CONTACT_FULL_NAME"
+            ],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-0-input-as-dict-fields-to-triage-3-custom-instructions.md",
+            "field_name": "title",
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "billingCode",
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "estimatedHours",
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "subIssueType",
+            "subtype_predefined_options": [],
+            "use_custom_instructions": false
+          },
+          {
+            "allow_removing_field": false,
+            "field_name": "ticketType",
+            "use_custom_instructions": false
+          }
+        ],
+        "fields_to_triage_2_custom_instructions": "When the ticket specifically states the priority, use that priority, it will begin with the statement\nHow urgent is your request?",
+        "fields_to_triage_8_custom_instructions": "-If a ticket comes from T2 NOC (contact email empower-noc@kaseya.com) regarding FWBU03 for storage and backup issues should be assigned to ticketCategory 205 Problem\n-Make no other ticketCategory Changes otherwise during triage if they match the above fields",
+        "move_to_board": false,
+        "target_board_or_queue_name": null
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ADD_TICKET_NOTE",
+      "id": "3e4440d1-5221-4838-98f3-605d6a6df0cd",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "custom_instructions": "[see separate markdown file]",
+        "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-1-input-as-dict-custom-instructions.md",
+        "note_type": "Internal Note",
+        "use_custom_instructions": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "a51e40c7-69d3-405b-bd46-551c86491e8c",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": "020 Triage",
+          "new_status": "Ready for Next Steps"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_SIMILAR_TICKETS",
+      "id": "c666e91f-410e-4b31-85e5-eedb8bfdcd14",
+      "input_as_dict": {
+        "days_to_look_back": 30,
+        "filter_by_board": false,
+        "relevancy_threshold": 0.7,
+        "similar_tickets_count": 5,
+        "ticket_similarity_type": "RELEVANT_TICKETS_FOR_COMPANY"
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "e15b9ea6-0a64-4d01-a10c-27bdddd34ba5",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "single_page": false,
+        "skip_calculated_fields_on_large_datasets": false,
+        "target_ticket_id": null,
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "field": "creatorResourceID",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Blackpoint API",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "creatorResourceID",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Kodi Todd",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "creatorResourceID",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Migration Tool - AP API",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "field": "source",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Insourced",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "source",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Phone",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "field": "ticketCategory",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "298 AI Tools",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "ticketCategory",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "311 Account Management",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "ticketCategory",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "503 DesignDesk",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "ticketCategory",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "504 Sales FTA",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "New Compromise found",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "doesNotBeginWith",
+                    "value": "Closed Opportunity",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "doesNotBeginWith",
+                    "value": "Won Opportunity",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "doesNotBeginWith",
+                    "value": "postmaster@pandell.com",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "ABC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "ASB",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "BL",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "BLR",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "BLS",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "BSL",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "BTC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "CBC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "CFS",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "CGC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "CLP",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "CMW",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "CSI",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "FAK",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "FCL",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "FFS",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "FWI",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "G3D",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "GRV",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "HFM",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "HIE",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "IIS",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "ISR",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "KES",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "KVR",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "LCF",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "LDW",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "LIL",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "MSD",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "MXM",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "NKG",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "NKS",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "OMG",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "OSG",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "PCM",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "PVB",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "QBC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "QMI",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "RCC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "RDC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "RWM",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SCI",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SCP",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SEC",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SEG",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SI",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SPM",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "SSL",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "Shaw Communications Inc",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "VCS",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "010 Client Portal",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "020 Triage",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "100 SD-Issues",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "110 SD-Access",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "200 CS-Routine",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "205 CS-Problem",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "210 CS-Monitoring Alert",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "220 CS-Security",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "field": "companyID",
+                "id": null,
+                "operator": "!=",
+                "value": "RCM",
+                "valueProviderInput": null
+              }
+            ]
+          },
+          "custom_field_conditions": null,
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "23644",
+  "integrations": null,
+  "name": "(v2.2) ticket-triage",
+  "state": "DISABLED",
+  "toolbox": null,
+  "trigger_type": "TRIGGERED"
+}

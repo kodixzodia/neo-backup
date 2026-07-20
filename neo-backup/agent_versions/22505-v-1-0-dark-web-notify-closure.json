@@ -1,0 +1,90 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(v.1.0) dark-web-notify-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-06-12T22:09:55.167405Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(v.1.0) dark-web-notify-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-26T21:54:38.205413Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(v.1.0) dark-web-notify-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-25T19:18:21.673195Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(v.2.2) dark-web-notify-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-19T15:48:18.590832Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(staging) dark-web-notify-closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-13T20:26:26.442413Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(staging) dark_web_notify_closure",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-13T19:47:48.822676Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(staging) Dark Web Alert - Notify and Close",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-08T15:06:29.602182Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "22505",
+    "name": "(staging) Dark Web Alert - Notify and Close",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-05-08T15:05:53.817818Z"
+  }
+]
