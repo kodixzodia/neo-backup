@@ -6,6 +6,28 @@
     "entity_type": "TICKET",
     "id": "23644",
     "name": "(v2.2) ticket-triage",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-14T16:44:02.318695Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-13T20:34:49.898124Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23644",
+    "name": "(v2.2) ticket-triage",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-07-08T21:35:35.194853Z"

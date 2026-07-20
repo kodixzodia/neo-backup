@@ -6,7 +6,7 @@
 - Type: `AGENTIC`
 - Trigger: `TRIGGERED`
 - Entity: `TICKET`
-- Version records exported: `37`
+- Version records exported: `39`
 - Tools configured: 20
 - Tool sample: ADD_INTERNAL_TICKET_NOTE, DELAY, FIND_CONFIGURATIONS, FIND_DOCUMENTATION, FIND_PSA_CONTACTS … (+15 more)
 - Extracted text files: 1
@@ -20,4 +20,4 @@
 - `agent_text/custom-instructions/` = extracted multiline instructions for clean diffs
 - `summaries/` = short human-readable summaries
 
-_Exported at 2026-07-08T22:20:41.291055+00:00_
+_Exported at 2026-07-20T15:53:47.676157+00:00_

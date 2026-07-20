@@ -1,5 +1,5 @@
 {
-  "agent_count": 37,
+  "agent_count": 31,
   "agents": [
     {
       "agent_file": "agents/22504-v-1-0-dark-web-alert-triage.json",
@@ -50,7 +50,7 @@
       "state": "ENABLED",
       "summary_file": "summaries/23618-v1-0-critical-alert-agent.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 28,
+      "versions_count": 30,
       "versions_file": "agent_versions/23618-v1-0-critical-alert-agent.json"
     },
     {
@@ -60,10 +60,10 @@
       "id": "23644",
       "name": "(v2.2) ticket-triage",
       "snapshot_file": "agent_snapshots/23644-v2-2-ticket-triage.json",
-      "state": "ENABLED",
+      "state": "DISABLED",
       "summary_file": "summaries/23644-v2-2-ticket-triage.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 17,
+      "versions_count": 19,
       "versions_file": "agent_versions/23644-v2-2-ticket-triage.json"
     },
     {
@@ -73,10 +73,10 @@
       "id": "23645",
       "name": "(v2.3) orchestration-agent",
       "snapshot_file": "agent_snapshots/23645-v2-3-orchestration-agent.json",
-      "state": "ENABLED",
+      "state": "DISABLED",
       "summary_file": "summaries/23645-v2-3-orchestration-agent.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 28,
+      "versions_count": 29,
       "versions_file": "agent_versions/23645-v2-3-orchestration-agent.json"
     },
     {
@@ -86,10 +86,10 @@
       "id": "23646",
       "name": "(v2.3) l1-sd-engineer",
       "snapshot_file": "agent_snapshots/23646-v2-3-l1-sd-engineer.json",
-      "state": "ENABLED",
+      "state": "DISABLED",
       "summary_file": "summaries/23646-v2-3-l1-sd-engineer.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 36,
+      "versions_count": 41,
       "versions_file": "agent_versions/23646-v2-3-l1-sd-engineer.json"
     },
     {
@@ -99,10 +99,10 @@
       "id": "23647",
       "name": "(v2.3) l1-cs-engineer ",
       "snapshot_file": "agent_snapshots/23647-v2-3-l1-cs-engineer.json",
-      "state": "ENABLED",
+      "state": "DISABLED",
       "summary_file": "summaries/23647-v2-3-l1-cs-engineer.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 23,
+      "versions_count": 26,
       "versions_file": "agent_versions/23647-v2-3-l1-cs-engineer.json"
     },
     {
@@ -112,10 +112,10 @@
       "id": "23648",
       "name": "(v2.2) router",
       "snapshot_file": "agent_snapshots/23648-v2-2-router.json",
-      "state": "ENABLED",
+      "state": "DISABLED",
       "summary_file": "summaries/23648-v2-2-router.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 11,
+      "versions_count": 13,
       "versions_file": "agent_versions/23648-v2-2-router.json"
     },
     {
@@ -128,7 +128,7 @@
       "state": "ENABLED",
       "summary_file": "summaries/23650-v2-3-sd-resolution-intelligence.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 37,
+      "versions_count": 39,
       "versions_file": "agent_versions/23650-v2-3-sd-resolution-intelligence.json"
     },
     {
@@ -138,63 +138,11 @@
       "id": "23651",
       "name": "(v1.1.0) script-enhancement",
       "snapshot_file": "agent_snapshots/23651-v1-1-0-script-enhancement.json",
-      "state": "ENABLED",
+      "state": "DISABLED",
       "summary_file": "summaries/23651-v1-1-0-script-enhancement.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 8,
+      "versions_count": 10,
       "versions_file": "agent_versions/23651-v1-1-0-script-enhancement.json"
-    },
-    {
-      "agent_file": "agents/23652-v1-0-corrective-actions-closure.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "23652",
-      "name": "(v1.0) corrective-actions-closure",
-      "snapshot_file": "agent_snapshots/23652-v1-0-corrective-actions-closure.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/23652-v1-0-corrective-actions-closure.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 11,
-      "versions_file": "agent_versions/23652-v1-0-corrective-actions-closure.json"
-    },
-    {
-      "agent_file": "agents/23776-x-orchestration-agent.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "23776",
-      "name": "(x) orchestration-agent",
-      "snapshot_file": "agent_snapshots/23776-x-orchestration-agent.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/23776-x-orchestration-agent.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 23,
-      "versions_file": "agent_versions/23776-x-orchestration-agent.json"
-    },
-    {
-      "agent_file": "agents/23777-x-100-110-resolution-intelligence.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "23777",
-      "name": "(x) 100-110-resolution-intelligence",
-      "snapshot_file": "agent_snapshots/23777-x-100-110-resolution-intelligence.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/23777-x-100-110-resolution-intelligence.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 28,
-      "versions_file": "agent_versions/23777-x-100-110-resolution-intelligence.json"
-    },
-    {
-      "agent_file": "agents/23778-x-script-enhancement.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "23778",
-      "name": "(x) script-enhancement",
-      "snapshot_file": "agent_snapshots/23778-x-script-enhancement.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/23778-x-script-enhancement.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 9,
-      "versions_file": "agent_versions/23778-x-script-enhancement.json"
     },
     {
       "agent_file": "agents/23779-v-1-1-320-499-resolution-intelligence.json",
@@ -210,82 +158,56 @@
       "versions_file": "agent_versions/23779-v-1-1-320-499-resolution-intelligence.json"
     },
     {
-      "agent_file": "agents/23781-cs-engineer.json",
+      "agent_file": "agents/23781-cs-technician-workflow-id-23781.json",
       "autonomy_type": "AGENTIC",
       "entity_type": "TICKET",
       "id": "23781",
-      "name": "cs-engineer ",
-      "snapshot_file": "agent_snapshots/23781-cs-engineer.json",
+      "name": "cs-technician (workflow ID: 23781)",
+      "snapshot_file": "agent_snapshots/23781-cs-technician-workflow-id-23781.json",
       "state": "ENABLED",
-      "summary_file": "summaries/23781-cs-engineer.md",
+      "summary_file": "summaries/23781-cs-technician-workflow-id-23781.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 35,
-      "versions_file": "agent_versions/23781-cs-engineer.json"
+      "versions_count": 44,
+      "versions_file": "agent_versions/23781-cs-technician-workflow-id-23781.json"
     },
     {
-      "agent_file": "agents/23782-service-desk-engineer.json",
+      "agent_file": "agents/23782-sd-technician-workflow-id-23782.json",
       "autonomy_type": "AGENTIC",
       "entity_type": "TICKET",
       "id": "23782",
-      "name": "service-desk-engineer",
-      "snapshot_file": "agent_snapshots/23782-service-desk-engineer.json",
+      "name": "sd-technician (workflow ID:23782) ",
+      "snapshot_file": "agent_snapshots/23782-sd-technician-workflow-id-23782.json",
       "state": "ENABLED",
-      "summary_file": "summaries/23782-service-desk-engineer.md",
+      "summary_file": "summaries/23782-sd-technician-workflow-id-23782.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 41,
-      "versions_file": "agent_versions/23782-service-desk-engineer.json"
+      "versions_count": 65,
+      "versions_file": "agent_versions/23782-sd-technician-workflow-id-23782.json"
     },
     {
-      "agent_file": "agents/23783-x-router.json",
+      "agent_file": "agents/23783-router-workflow-id-23783.json",
       "autonomy_type": "CHAINED_ACTIONS",
       "entity_type": "TICKET",
       "id": "23783",
-      "name": "(x) router",
-      "snapshot_file": "agent_snapshots/23783-x-router.json",
+      "name": "router (workflow ID:23783)",
+      "snapshot_file": "agent_snapshots/23783-router-workflow-id-23783.json",
       "state": "ENABLED",
-      "summary_file": "summaries/23783-x-router.md",
+      "summary_file": "summaries/23783-router-workflow-id-23783.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 14,
-      "versions_file": "agent_versions/23783-x-router.json"
+      "versions_count": 22,
+      "versions_file": "agent_versions/23783-router-workflow-id-23783.json"
     },
     {
-      "agent_file": "agents/23821-monthly-executive-summary.json",
-      "autonomy_type": "CHAINED_ACTIONS",
-      "entity_type": "TICKET",
-      "id": "23821",
-      "name": "Monthly Executive Summary",
-      "snapshot_file": "agent_snapshots/23821-monthly-executive-summary.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/23821-monthly-executive-summary.md",
-      "trigger_type": "SCHEDULED",
-      "versions_count": 4,
-      "versions_file": "agent_versions/23821-monthly-executive-summary.json"
-    },
-    {
-      "agent_file": "agents/23939-ticket-merger.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "23939",
-      "name": "Ticket Merger",
-      "snapshot_file": "agent_snapshots/23939-ticket-merger.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/23939-ticket-merger.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 7,
-      "versions_file": "agent_versions/23939-ticket-merger.json"
-    },
-    {
-      "agent_file": "agents/23961-x-phishing-agent.json",
+      "agent_file": "agents/23961-phishing-agent-workflow-id-23961.json",
       "autonomy_type": "AGENTIC",
       "entity_type": "TICKET",
       "id": "23961",
-      "name": "(x) phishing-agent",
-      "snapshot_file": "agent_snapshots/23961-x-phishing-agent.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/23961-x-phishing-agent.md",
+      "name": "phishing-agent (workflow ID: 23961) ",
+      "snapshot_file": "agent_snapshots/23961-phishing-agent-workflow-id-23961.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/23961-phishing-agent-workflow-id-23961.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 10,
-      "versions_file": "agent_versions/23961-x-phishing-agent.json"
+      "versions_count": 16,
+      "versions_file": "agent_versions/23961-phishing-agent-workflow-id-23961.json"
     },
     {
       "agent_file": "agents/24102-customer-chaser.json",
@@ -314,45 +236,6 @@
       "versions_file": "agent_versions/24114-note-added-tech-notify.json"
     },
     {
-      "agent_file": "agents/24258-x-ticket-triage.json",
-      "autonomy_type": "CHAINED_ACTIONS",
-      "entity_type": "TICKET",
-      "id": "24258",
-      "name": "(x)ticket-triage",
-      "snapshot_file": "agent_snapshots/24258-x-ticket-triage.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/24258-x-ticket-triage.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 9,
-      "versions_file": "agent_versions/24258-x-ticket-triage.json"
-    },
-    {
-      "agent_file": "agents/24430-m365-user-onboarding.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "24430",
-      "name": "M365 User Onboarding",
-      "snapshot_file": "agent_snapshots/24430-m365-user-onboarding.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/24430-m365-user-onboarding.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 6,
-      "versions_file": "agent_versions/24430-m365-user-onboarding.json"
-    },
-    {
-      "agent_file": "agents/24431-user-offboarding-agent.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "24431",
-      "name": "user-offboarding-agent",
-      "snapshot_file": "agent_snapshots/24431-user-offboarding-agent.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/24431-user-offboarding-agent.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 8,
-      "versions_file": "agent_versions/24431-user-offboarding-agent.json"
-    },
-    {
       "agent_file": "agents/24487-microsoft-license-reconciliation.json",
       "autonomy_type": "AGENTIC",
       "entity_type": "TICKET",
@@ -362,21 +245,8 @@
       "state": "DISABLED",
       "summary_file": "summaries/24487-microsoft-license-reconciliation.md",
       "trigger_type": "SCHEDULED",
-      "versions_count": 6,
+      "versions_count": 8,
       "versions_file": "agent_versions/24487-microsoft-license-reconciliation.json"
-    },
-    {
-      "agent_file": "agents/24524-fio-test-agent.json",
-      "autonomy_type": "CONVERSATIONAL",
-      "entity_type": "NONE",
-      "id": "24524",
-      "name": "FIO Test Agent",
-      "snapshot_file": "agent_snapshots/24524-fio-test-agent.json",
-      "state": "ENABLED",
-      "summary_file": "summaries/24524-fio-test-agent.md",
-      "trigger_type": "NONE",
-      "versions_count": 6,
-      "versions_file": "agent_versions/24524-fio-test-agent.json"
     },
     {
       "agent_file": "agents/24895-force-triage.json",
@@ -405,32 +275,6 @@
       "versions_file": "agent_versions/24918-force-noteadded-loganbrooks.json"
     },
     {
-      "agent_file": "agents/25059-ad-micro-orchestration-agent.json",
-      "autonomy_type": "AGENTIC",
-      "entity_type": "TICKET",
-      "id": "25059",
-      "name": "(ad-micro) orchestration-agent",
-      "snapshot_file": "agent_snapshots/25059-ad-micro-orchestration-agent.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/25059-ad-micro-orchestration-agent.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 5,
-      "versions_file": "agent_versions/25059-ad-micro-orchestration-agent.json"
-    },
-    {
-      "agent_file": "agents/25060-ad-micro-resplan.json",
-      "autonomy_type": "CHAINED_ACTIONS",
-      "entity_type": "TICKET",
-      "id": "25060",
-      "name": "(ad-micro)resplan",
-      "snapshot_file": "agent_snapshots/25060-ad-micro-resplan.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/25060-ad-micro-resplan.md",
-      "trigger_type": "TRIGGERED",
-      "versions_count": 8,
-      "versions_file": "agent_versions/25060-ad-micro-resplan.json"
-    },
-    {
       "agent_file": "agents/25350-black-point-closer.json",
       "autonomy_type": "CHAINED_ACTIONS",
       "entity_type": "TICKET",
@@ -440,7 +284,7 @@
       "state": "ENABLED",
       "summary_file": "summaries/25350-black-point-closer.md",
       "trigger_type": "SCHEDULED",
-      "versions_count": 7,
+      "versions_count": 15,
       "versions_file": "agent_versions/25350-black-point-closer.json"
     },
     {
@@ -453,52 +297,130 @@
       "state": "ENABLED",
       "summary_file": "summaries/25400-ad-micro-triage.md",
       "trigger_type": "TRIGGERED",
-      "versions_count": 7,
+      "versions_count": 8,
       "versions_file": "agent_versions/25400-ad-micro-triage.json"
     },
     {
-      "agent_file": "agents/25410-force-triage-ad.json",
-      "autonomy_type": "CHAINED_ACTIONS",
-      "entity_type": "TICKET",
-      "id": "25410",
-      "name": "force-triage (AD)",
-      "snapshot_file": "agent_snapshots/25410-force-triage-ad.json",
-      "state": "DISABLED",
-      "summary_file": "summaries/25410-force-triage-ad.md",
-      "trigger_type": "SCHEDULED",
-      "versions_count": 5,
-      "versions_file": "agent_versions/25410-force-triage-ad.json"
-    },
-    {
-      "agent_file": "agents/25413-test-triage.json",
+      "agent_file": "agents/25413-triage-workflow-id-25413.json",
       "autonomy_type": "CHAINED_ACTIONS",
       "entity_type": "TICKET",
       "id": "25413",
-      "name": "test-triage",
-      "snapshot_file": "agent_snapshots/25413-test-triage.json",
+      "name": "triage (workflow ID:25413)",
+      "snapshot_file": "agent_snapshots/25413-triage-workflow-id-25413.json",
       "state": "ENABLED",
-      "summary_file": "summaries/25413-test-triage.md",
+      "summary_file": "summaries/25413-triage-workflow-id-25413.md",
       "trigger_type": "TRIGGERED",
+      "versions_count": 49,
+      "versions_file": "agent_versions/25413-triage-workflow-id-25413.json"
+    },
+    {
+      "agent_file": "agents/25538-datto-backup-closer.json",
+      "autonomy_type": "CHAINED_ACTIONS",
+      "entity_type": "TICKET",
+      "id": "25538",
+      "name": "datto-backup-closer",
+      "snapshot_file": "agent_snapshots/25538-datto-backup-closer.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25538-datto-backup-closer.md",
+      "trigger_type": "SCHEDULED",
+      "versions_count": 25,
+      "versions_file": "agent_versions/25538-datto-backup-closer.json"
+    },
+    {
+      "agent_file": "agents/25578-disk-space-remediator.json",
+      "autonomy_type": "AGENTIC",
+      "entity_type": "TICKET",
+      "id": "25578",
+      "name": "disk-space-remediator",
+      "snapshot_file": "agent_snapshots/25578-disk-space-remediator.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25578-disk-space-remediator.md",
+      "trigger_type": "TRIGGERED",
+      "versions_count": 9,
+      "versions_file": "agent_versions/25578-disk-space-remediator.json"
+    },
+    {
+      "agent_file": "agents/25658-uplink-failover-closer.json",
+      "autonomy_type": "CHAINED_ACTIONS",
+      "entity_type": "TICKET",
+      "id": "25658",
+      "name": "uplink-failover-closer",
+      "snapshot_file": "agent_snapshots/25658-uplink-failover-closer.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25658-uplink-failover-closer.md",
+      "trigger_type": "SCHEDULED",
+      "versions_count": 15,
+      "versions_file": "agent_versions/25658-uplink-failover-closer.json"
+    },
+    {
+      "agent_file": "agents/25664-device-reboot-notify-closer.json",
+      "autonomy_type": "CHAINED_ACTIONS",
+      "entity_type": "TICKET",
+      "id": "25664",
+      "name": "device-reboot-notify-closer",
+      "snapshot_file": "agent_snapshots/25664-device-reboot-notify-closer.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25664-device-reboot-notify-closer.md",
+      "trigger_type": "SCHEDULED",
+      "versions_count": 3,
+      "versions_file": "agent_versions/25664-device-reboot-notify-closer.json"
+    },
+    {
+      "agent_file": "agents/25748-dmarc-reports-closure.json",
+      "autonomy_type": "CHAINED_ACTIONS",
+      "entity_type": "TICKET",
+      "id": "25748",
+      "name": "DMARC-reports-closure",
+      "snapshot_file": "agent_snapshots/25748-dmarc-reports-closure.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25748-dmarc-reports-closure.md",
+      "trigger_type": "SCHEDULED",
       "versions_count": 7,
-      "versions_file": "agent_versions/25413-test-triage.json"
+      "versions_file": "agent_versions/25748-dmarc-reports-closure.json"
+    },
+    {
+      "agent_file": "agents/25868-informational-closer.json",
+      "autonomy_type": "CHAINED_ACTIONS",
+      "entity_type": "TICKET",
+      "id": "25868",
+      "name": "Informational-closer",
+      "snapshot_file": "agent_snapshots/25868-informational-closer.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25868-informational-closer.md",
+      "trigger_type": "SCHEDULED",
+      "versions_count": 3,
+      "versions_file": "agent_versions/25868-informational-closer.json"
+    },
+    {
+      "agent_file": "agents/25873-draft-ri-sd.json",
+      "autonomy_type": "AGENTIC",
+      "entity_type": "TICKET",
+      "id": "25873",
+      "name": "(draft) RI-SD",
+      "snapshot_file": "agent_snapshots/25873-draft-ri-sd.json",
+      "state": "ENABLED",
+      "summary_file": "summaries/25873-draft-ri-sd.md",
+      "trigger_type": "TRIGGERED",
+      "versions_count": 16,
+      "versions_file": "agent_versions/25873-draft-ri-sd.json"
     }
   ],
   "base_url": "https://api.neoagent.io/public-api",
   "counts_by_state": {
-    "DISABLED": 16,
-    "ENABLED": 21
+    "DISABLED": 9,
+    "ENABLED": 22
   },
   "counts_by_trigger_type": {
-    "NONE": 2,
-    "SCHEDULED": 7,
-    "TRIGGERED": 28
+    "NONE": 1,
+    "SCHEDULED": 10,
+    "TRIGGERED": 20
   },
   "counts_by_type": {
-    "AGENTIC": 19,
-    "CHAINED_ACTIONS": 16,
-    "CONVERSATIONAL": 2
+    "AGENTIC": 13,
+    "CHAINED_ACTIONS": 17,
+    "CONVERSATIONAL": 1
   },
-  "exported_at": "2026-07-08T22:20:53.861261+00:00",
+  "exported_at": "2026-07-20T15:53:57.960127+00:00",
   "include_versions": true,
   "state_filter": "ENABLED"
 }

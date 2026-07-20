@@ -3,7 +3,7 @@
   "actions": [
     {
       "action_type": "FIND_ENTITIES",
-      "id": "3e97ded4-e44b-41f4-a971-496500467b3f",
+      "id": "81c79f99-29ef-4545-aaa3-8fe36ff1f5ed",
       "input_as_dict": {
         "opportunity_conditions": {
           "conditions": {
@@ -18,6 +18,9 @@
           }
         },
         "result_entity_type": "TICKET",
+        "single_page": false,
+        "skip_calculated_fields_on_large_datasets": false,
+        "target_ticket_id": null,
         "ticket_conditions": {
           "conditions": {
             "combinator": "and",
@@ -528,7 +531,7 @@
     },
     {
       "action_type": "AGENTIC",
-      "id": "77777d51-5d8e-42dd-8535-1c8cb0a92d2f",
+      "id": "ce0fcb2e-f889-4cdb-805c-c8a862915c83",
       "input_as_dict": {},
       "output": {
         "credits_consumed": 0
@@ -593,6 +596,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "ATTACHMENTS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -603,6 +607,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "BILLING_CODES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -613,6 +618,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "CONTRACTS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -623,6 +629,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "EXPENSES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -633,6 +640,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "INVENTORY",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -643,6 +651,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "INVOICES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -653,6 +662,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "OPPORTUNITIES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -663,6 +673,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "PRODUCTS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -673,6 +684,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "PROJECTS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -683,6 +695,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "PURCHASE_ORDERS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -693,6 +706,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "QUOTES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -703,6 +717,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "RESOURCES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -713,6 +728,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "SALES_ORDERS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -723,6 +739,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "SERVICE_CALLS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -733,6 +750,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "SURVEYS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -743,6 +761,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "TAGS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -753,6 +772,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "ADMIN",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -763,6 +783,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "COMPANIES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -773,6 +794,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "COMPANY_TODOS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -783,6 +805,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "CONFIGURATIONS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -793,6 +816,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "CONTACTS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -803,6 +827,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "DOCUMENTS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -813,6 +838,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "KNOWLEDGE_BASE",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -823,6 +849,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "TICKETS",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -833,6 +860,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "TICKET_NOTES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -843,6 +871,7 @@
           "allow_merge": null,
           "client_facing_settings": null,
           "group_type": "TIME_ENTRIES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -865,6 +894,7 @@
             "use_udf_field": true
           },
           "group_type": "CLIENT_FACING_TICKET_NOTES",
+          "internal_note_settings": null,
           "require_til": false,
           "time_entry_udf_settings": null,
           "update_allowed_fields": null
@@ -1153,7 +1183,7 @@
     }
   },
   "name": "(v2.3) l1-sd-engineer",
-  "state": "ENABLED",
+  "state": "DISABLED",
   "toolbox": {
     "tool_settings_by_type": {
       "ADD_RECIPIENT_PERMISSION": {
@@ -1322,5 +1352,5 @@
     }
   },
   "trigger_type": "TRIGGERED",
-  "version_timestamp": "2026-07-07T20:55:27.363485Z"
+  "version_timestamp": "2026-07-14T16:44:11.554241Z"
 }

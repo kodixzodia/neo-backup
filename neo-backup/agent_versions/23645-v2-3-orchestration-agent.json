@@ -6,6 +6,17 @@
     "entity_type": "TICKET",
     "id": "23645",
     "name": "(v2.3) orchestration-agent",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-14T16:44:06.635075Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23645",
+    "name": "(v2.3) orchestration-agent",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-07-07T21:40:28.373230Z"

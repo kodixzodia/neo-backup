@@ -87,7 +87,11 @@ Agent Purpose: The 'Resolution_Intelligence Agent' is a post‑resolution analys
 7. Update ticket: 
 - @𝘜𝘱𝘥𝘢𝘵𝘦 𝘛𝘪𝘤𝘬𝘦𝘵 𝘍𝘪𝘦𝘭𝘥𝘴: Apply the identified configuration item to the ticket "Configuration Item" field 
 - @𝘜𝘱𝘥𝘢𝘵𝘦 𝘛𝘪𝘤𝘬𝘦𝘵 𝘍𝘪𝘦𝘭𝘥𝘴: Assess the resolution preformed by the technician that resolved the user request/issue (do not include attempts unnecessary details). create a numbered step-by-step resolution summary. @𝘜𝘱𝘥𝘢𝘵𝘦 𝘛𝘪𝘤𝘬𝘦𝘵 𝘍𝘪𝘦𝘭𝘥𝘴: add the resolution summary to the Resolution" field. 
-- @𝘈𝘥𝘥 𝘐𝘯𝘵𝘦𝘳𝘯𝘢𝘭 𝘛𝘪𝘤𝘬𝘦𝘵 𝘕𝘰𝘵𝘦, @𝘚𝘦𝘯𝘥 𝘌𝘮𝘢𝘪𝘭 𝘵𝘰 𝘐𝘯𝘵𝘦𝘳𝘯𝘢𝘭 𝘛𝘦𝘢𝘮 (subject: "Resolution Intelligence: %Technician Name%"), @𝘚𝘦𝘯𝘥 𝘛𝘦𝘢𝘮𝘴 𝘔𝘦𝘴𝘴𝘢𝘨𝘦 𝘵𝘰 𝘐𝘯𝘵𝘦𝘳𝘯𝘢𝘭 𝘛𝘦𝘢𝘮  using the following template: 
+- @𝘈𝘥𝘥 𝘐𝘯𝘵𝘦𝘳𝘯𝘢𝘭 𝘛𝘪𝘤𝘬𝘦𝘵 𝘕𝘰𝘵𝘦, @𝘚𝘦𝘯𝘥 𝘌𝘮𝘢𝘪𝘭 𝘵𝘰 𝘐𝘯𝘵𝘦𝘳𝘯𝘢𝘭 𝘛𝘦𝘢𝘮 (subject: "Resolution Intelligence: %Technician Name%"), @𝘚𝘦𝘯𝘥 𝘛𝘦𝘢𝘮𝘴 𝘔𝘦𝘴𝘴𝘢𝘨𝘦 𝘵𝘰 𝘐𝘯𝘵𝘦𝘳𝘯𝘢𝘭 𝘛𝘦𝘢𝘮 
+
+Enforced Email & Output (Note) Template: 
+** You are required to use this format for both internal notes and emails.
+
 ```
 ==============================
 Resolution Summary: 

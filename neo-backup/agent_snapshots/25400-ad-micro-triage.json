@@ -266,6 +266,13 @@
                     "field": "companyID",
                     "id": null,
                     "operator": "=",
+                    "value": "FCF",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
                     "value": "Fine Choice Foods",
                     "valueProviderInput": null
                   },
@@ -553,5 +560,5 @@
   "state": "ENABLED",
   "toolbox": null,
   "trigger_type": "TRIGGERED",
-  "version_timestamp": "2026-07-08T21:36:00.468701Z"
+  "version_timestamp": "2026-07-16T16:34:08.741840Z"
 }

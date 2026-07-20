@@ -8,6 +8,28 @@
     "name": "microsoft-license-reconciliation",
     "state": "DISABLED",
     "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-07-14T14:36:27.150607Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "24487",
+    "name": "microsoft-license-reconciliation",
+    "state": "DISABLED",
+    "trigger_type": "SCHEDULED",
+    "version_timestamp": "2026-07-14T14:35:37.816086Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "24487",
+    "name": "microsoft-license-reconciliation",
+    "state": "DISABLED",
+    "trigger_type": "SCHEDULED",
     "version_timestamp": "2026-06-19T19:50:35.732521Z"
   },
   {

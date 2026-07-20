@@ -1,9 +1,8 @@
-STANDARD TITLE FORMAT: [SERVICE DOMAIN] – [ISSUE SUMMARY]
-  - Enforce the following standard by default on all triaged tickets
+If company is FWI -- Search ticket description for possible company indicator, assign most likely affected company. 
 
-(override rule: ) Preserve the existing existing ticket title only if: 
-  - queue_id matches "210", OR 
-  - queue_name: "CS-Monitoring Alert", OR 
-  - title_starts_with: "ITGlue Notification", OR
-  - title_contain: "dark web", OR
-  - title_contains: "New compromise found"
+- Always reference with contact on ticket when making company assignment decisions 
+
+Preserve the initial company value if: 
+  - No contact is assigned 
+ 
+When unable to identify the correct company, default to company: "FWI"

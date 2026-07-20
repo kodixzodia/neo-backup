@@ -8,6 +8,17 @@
     "name": "ad-micro-triage",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-16T16:34:08.741840Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "ad-micro-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-07-08T21:36:00.468701Z"
   },
   {
