@@ -128,6 +128,10 @@
             {
               "id": "29682986",
               "name": "Billy Nguyen"
+            },
+            {
+              "id": "29683015",
+              "name": "Kim David Camaongay"
             }
           ],
           "technician_pool_source": "DASHBOARD_POOL"
@@ -167,6 +171,9 @@
           }
         },
         "result_entity_type": "TICKET",
+        "single_page": false,
+        "skip_calculated_fields_on_large_datasets": false,
+        "target_ticket_id": null,
         "ticket_conditions": {
           "conditions": {
             "combinator": "and",
@@ -261,243 +268,339 @@
                 "rules": [
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "ABC"
+                    "value": "ABC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "ASB"
+                    "value": "ASB",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "BL"
+                    "value": "BL",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "BLR"
+                    "value": "BLR",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "BLS"
+                    "value": "BLS",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "BTC"
+                    "value": "BTC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "CBC"
+                    "value": "CBC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "CFS"
+                    "value": "CFS",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "CGC"
+                    "value": "CGC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "CLP"
+                    "value": "CLP",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "CMW"
+                    "value": "CMW",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "CSI"
+                    "value": "CSI",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "FAK"
+                    "value": "FAK",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "FCL"
+                    "value": "FCL",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "FFS"
+                    "value": "FFS",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "FWI"
+                    "value": "FWI",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "G3D"
+                    "value": "G3D",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "GRV"
+                    "value": "GRV",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "HFM"
+                    "value": "HFM",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "HIE"
+                    "value": "HIE",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "IIS"
+                    "value": "IIS",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "ISR"
+                    "value": "ISR",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "KES"
+                    "value": "KES",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "KVR"
+                    "value": "KVR",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "LCF"
+                    "value": "LCF",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "LDW"
+                    "value": "LDW",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "LIL"
+                    "value": "LIL",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "MSD"
+                    "value": "MSD",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "MXM"
+                    "value": "MXM",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "NGM"
+                    "value": "NGM",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "NKG"
+                    "value": "NKG",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "NKS"
+                    "value": "NKS",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "OMG"
+                    "value": "OMG",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "PCM"
+                    "value": "PCM",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "PVB"
+                    "value": "PVB",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "QBC"
+                    "value": "QBC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "QMI"
+                    "value": "QMI",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "RCC"
+                    "value": "RCC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "RDC"
+                    "value": "RDC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "RWM"
+                    "value": "RWM",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "SCI"
+                    "value": "SCI",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "SCP"
+                    "value": "SCP",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "SEC"
+                    "value": "SEC",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "SEG"
+                    "value": "SEG",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "SI"
+                    "value": "SI",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "SPM"
+                    "value": "SPM",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "SSL"
+                    "value": "SSL",
+                    "valueProviderInput": null
                   },
                   {
                     "field": "companyID",
+                    "id": null,
                     "operator": "=",
-                    "value": "VCS"
+                    "value": "VCS",
+                    "valueProviderInput": null
                   }
                 ]
               },
@@ -589,8 +692,8 @@
   "id": "23648",
   "integrations": null,
   "name": "(v2.2) router",
-  "state": "ENABLED",
+  "state": "DISABLED",
   "toolbox": null,
   "trigger_type": "TRIGGERED",
-  "version_timestamp": "2026-06-26T22:41:53.897814Z"
+  "version_timestamp": "2026-07-14T16:44:15.567678Z"
 }

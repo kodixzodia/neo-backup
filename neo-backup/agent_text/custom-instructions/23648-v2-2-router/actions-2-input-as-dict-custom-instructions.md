@@ -19,6 +19,7 @@ When assessing workload for each technician:
 
 # Special Instructions: 
 - Kurt should only get tickets for the following clients: CMW, BTC, CFS, CGC, MSD, PCM, QBC, RDC 
+- All tickets for HY's Steakhouse should be assigned to Kim, Kim should receive no other tickets for other clients ever. 
 
 # Professional Services Team Rules: 
 

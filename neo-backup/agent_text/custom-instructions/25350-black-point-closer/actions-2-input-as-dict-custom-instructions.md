@@ -1,1 +1,1 @@
-Provide overview summary of all closed tickets
+Always add internal note "Closed automatically by NEO Agent black-point-closer"

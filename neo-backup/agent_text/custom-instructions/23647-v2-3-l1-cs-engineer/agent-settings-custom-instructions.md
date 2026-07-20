@@ -101,3 +101,10 @@ Prior steps: List prior steps take (scripts run, attempts made, and actions exec
 
 Awaiting authorization before execution...
 ```
+# DattoRMM Transient Failure Handling
+- If an Execute RMM Script call returns an HTTP 5xx (e.g., DattoRMM quickjob 500) and no changes were made on the endpoint:
+  - Verify device reachability/status in DattoRMM using available tools (e.g., Find Configurations / Devices, List Synced Devices, DattoRMM API).
+  - Check for recent job or audit/log activity on the device to detect systemic issues.
+  - Wait 60–120 seconds and perform ONE automatic retry of the same approved low-risk script. Agents are allowed one script per cycle; this retry counts as that script execution.
+  - If the retry also returns an HTTP 5xx or the device is offline/unreachable, do not attempt further retries. Record the exact error details (HTTP status, timestamp, path or component) in an internal ticket note, set the ticket to Waiting Technician, and route/escalate per disk-space fallback instructions.
+- If a Trigger or Schedule Workflow action fails because the target workflow is disabled (e.g., Workflow 23651 not enabled), include the workflow ID and failure in the internal note so platform administrators can review/enable the workflow.

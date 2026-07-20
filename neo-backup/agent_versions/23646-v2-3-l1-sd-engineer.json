@@ -6,6 +6,61 @@
     "entity_type": "TICKET",
     "id": "23646",
     "name": "(v2.3) l1-sd-engineer",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-14T16:44:11.554241Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23646",
+    "name": "(v2.3) l1-sd-engineer",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-09T22:41:46.903433Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23646",
+    "name": "(v2.3) l1-sd-engineer",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-09T21:59:40.336412Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23646",
+    "name": "(v2.3) l1-sd-engineer",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-09T21:38:54.846818Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23646",
+    "name": "(v2.3) l1-sd-engineer",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-09T21:27:52.888239Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23646",
+    "name": "(v2.3) l1-sd-engineer",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-07-07T20:55:27.363485Z"

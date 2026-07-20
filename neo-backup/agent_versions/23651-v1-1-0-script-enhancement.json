@@ -6,6 +6,28 @@
     "entity_type": "TICKET",
     "id": "23651",
     "name": "(v1.1.0) script-enhancement",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-14T15:21:48.436940Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23651",
+    "name": "(v1.1.0) script-enhancement",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-10T15:47:13.606580Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23651",
+    "name": "(v1.1.0) script-enhancement",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-06-19T21:59:40.018207Z"

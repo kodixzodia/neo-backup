@@ -1,7 +1,9 @@
-When triaging company on tickets initially with company: "BL" 
-  - Assign the correct sub company by analyzing user signature and assign either BLR (regina) or BLS (saskatoon). 
+STANDARD TITLE FORMAT: [SERVICE DOMAIN] – [ISSUE SUMMARY]
+  - Enforce the following standard by default on all triaged tickets
 
-Preserve the initial company value if: 
-  - No contact is assigned 
- 
-When unable to identify the correct company, default to company: "FWI"
+(override rule: ) Preserve the existing existing ticket title only if: 
+  - queue_id matches "210", OR 
+  - queue_name: "CS-Monitoring Alert", OR 
+  - title_starts_with: "ITGlue Notification", OR
+  - title_contain: "dark web", OR
+  - title_contains: "New compromise found"

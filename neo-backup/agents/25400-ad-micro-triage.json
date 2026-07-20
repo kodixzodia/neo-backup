@@ -266,6 +266,13 @@
                     "field": "companyID",
                     "id": null,
                     "operator": "=",
+                    "value": "FCF",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "companyID",
+                    "id": null,
+                    "operator": "=",
                     "value": "Fine Choice Foods",
                     "valueProviderInput": null
                   },

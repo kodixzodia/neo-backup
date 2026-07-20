@@ -6,6 +6,28 @@
     "entity_type": "TICKET",
     "id": "23648",
     "name": "(v2.2) router",
+    "state": "DISABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-14T16:44:15.567678Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23648",
+    "name": "(v2.2) router",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-09T23:00:57.626716Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "23648",
+    "name": "(v2.2) router",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-06-26T22:41:53.897814Z"

@@ -1,0 +1,1 @@
+Set Status to “Ready for Next Steps” during triage. Do not set “Waiting Technician” in the triage status field. The Escalate Ticket action is responsible for changing the ticket to “Waiting Technician” when the persisted “AI Eligibility” UDF is “Ineligible”.

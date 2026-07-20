@@ -1,0 +1,1 @@
+- ALWAYS remove the contact if ticket is in queue that is in range 200-297

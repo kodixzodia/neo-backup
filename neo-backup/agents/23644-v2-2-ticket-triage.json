@@ -28,13 +28,6 @@
             "allow_removing_field": false,
             "custom_instructions": "[see separate markdown file]",
             "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-0-input-as-dict-fields-to-triage-2-custom-instructions.md",
-            "field_name": "title",
-            "use_custom_instructions": true
-          },
-          {
-            "allow_removing_field": false,
-            "custom_instructions": "[see separate markdown file]",
-            "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-0-input-as-dict-fields-to-triage-3-custom-instructions.md",
             "field_name": "company",
             "search_company_by": [
               "COMPANY_ID",
@@ -43,6 +36,13 @@
               "CONTACT_EMAIL",
               "CONTACT_FULL_NAME"
             ],
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/23644-v2-2-ticket-triage/actions-0-input-as-dict-fields-to-triage-3-custom-instructions.md",
+            "field_name": "title",
             "use_custom_instructions": true
           },
           {
@@ -137,6 +137,9 @@
           }
         },
         "result_entity_type": "TICKET",
+        "single_page": false,
+        "skip_calculated_fields_on_large_datasets": false,
+        "target_ticket_id": null,
         "ticket_conditions": {
           "conditions": {
             "combinator": "and",
@@ -699,7 +702,7 @@
   "id": "23644",
   "integrations": null,
   "name": "(v2.2) ticket-triage",
-  "state": "ENABLED",
+  "state": "DISABLED",
   "toolbox": null,
   "trigger_type": "TRIGGERED"
 }

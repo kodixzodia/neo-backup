@@ -8,6 +8,28 @@
     "name": "(v2.3) sd-resolution-intelligence",
     "state": "ENABLED",
     "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-16T21:13:56.899620Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23650",
+    "name": "(v2.3) sd-resolution-intelligence",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-15T16:02:57.954409Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "AGENTIC",
+    "entity_type": "TICKET",
+    "id": "23650",
+    "name": "(v2.3) sd-resolution-intelligence",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
     "version_timestamp": "2026-06-26T20:04:41.412441Z"
   },
   {
