@@ -1,0 +1,227 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "5c8fd965-8fa9-493a-8693-0e121812f631",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "combinator": "or",
+                    "rules": [
+                      {
+                        "field": "description",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "alerts-noreply@meraki.com",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "description",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "network were disconnected",
+                        "valueProviderInput": null
+                      }
+                    ]
+                  },
+                  {
+                    "combinator": "or",
+                    "rules": [
+                      {
+                        "field": "title",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "Meraki switch port",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "title",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "Switch port disconnected",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "title",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "link speed changed",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "title",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "switched to Internet 1",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "title",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "switched to Internet 2",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "title",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "uplink failover",
+                        "valueProviderInput": null
+                      },
+                      {
+                        "field": "title",
+                        "id": null,
+                        "operator": "contains",
+                        "value": "uplink flapping",
+                        "valueProviderInput": null
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Canceled",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Complete",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Completed (With CSAT)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Duplicate",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "010 Client Portal",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "020 Triage",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "100 SD-Issues",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "210 CS-Monitoring Alert",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "field": "companyID",
+                "id": null,
+                "operator": "=",
+                "value": "FWI",
+                "valueProviderInput": null
+              },
+              {
+                "field": "creatorResourceID",
+                "id": null,
+                "operator": "=",
+                "value": "Autotask Administrator",
+                "valueProviderInput": null
+              }
+            ]
+          },
+          "custom_field_conditions": null,
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "a631ce54-a4a4-4dfd-a56d-4484b0c8791d",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": "Informational",
+          "new_queue": null,
+          "new_status": "Complete"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "25658",
+  "integrations": null,
+  "name": "uplink-failover-closer",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "SCHEDULED",
+  "version_timestamp": "2026-07-16T16:13:38.647700Z"
+}

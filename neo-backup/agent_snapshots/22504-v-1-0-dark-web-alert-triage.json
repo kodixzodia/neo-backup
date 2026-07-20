@@ -1,0 +1,390 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "1dfa6c14-edc9-4a33-a266-b9dc642ce602",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "field": "status",
+                "id": "15c79146-307c-497b-910e-2e1331f619c9",
+                "operator": "=",
+                "value": "New",
+                "valueProviderInput": null
+              },
+              {
+                "field": "title",
+                "id": "2cacd664-4fa8-4be0-913a-9e366bb42034",
+                "operator": "=",
+                "value": "New Compromise found",
+                "valueProviderInput": null
+              },
+              {
+                "field": "ticketCategory",
+                "id": "a9717f61-06d6-4801-ae7a-b56e19786346",
+                "operator": "=",
+                "value": "210 Alert - Monitoring",
+                "valueProviderInput": null
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "ABC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "ASB"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BLR"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BLS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "BTC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CBC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CFS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CGC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CLP"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CMW"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "CSI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FAK"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FCL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FFS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "FWI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "G3D"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "GRV"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "HFM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "HIE"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "IIS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "ISR"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "KES"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "KVR"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "LCF"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "LDW"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "LIL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "MSD"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "MXM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "NGM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "NKG"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "NKS"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "OMG"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "PCM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "PVB"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "QBC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "QMI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "RCC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "RDC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "RWM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SCI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SCP"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SEC"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SEG"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SI"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SPM"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "SSL"
+                  },
+                  {
+                    "field": "companyID",
+                    "operator": "=",
+                    "value": "VCS"
+                  }
+                ]
+              },
+              {
+                "field": "creatorResourceID",
+                "id": null,
+                "operator": "!=",
+                "value": "Migration Tool - AP API",
+                "valueProviderInput": null
+              }
+            ]
+          },
+          "custom_field_conditions": null,
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "ADD_TICKET_NOTE",
+      "id": "2fc88e72-93a0-4726-8d0a-15c852c2b2b5",
+      "input_as_dict": {
+        "ask_for_feedback": false,
+        "note_type": "Internal Note",
+        "use_custom_instructions": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "TRIAGE_TICKET",
+      "id": "49250b63-6f5d-4367-9e6b-43e8651fe337",
+      "input_as_dict": {
+        "fields_to_triage": [
+          {
+            "allow_removing_field": false,
+            "custom_instructions": "[see separate markdown file]",
+            "custom_instructions_file": "agent_text/custom-instructions/22504-v-1-0-dark-web-alert-triage/actions-2-input-as-dict-fields-to-triage-0-custom-instructions.md",
+            "field_name": "contact",
+            "include_company_custom_instructions": false,
+            "include_ticket_custom_fields": false,
+            "save_original_contact_as_additional_contact": false,
+            "use_client_primary_contact_if_unable_to_triage": false,
+            "use_custom_instructions": true
+          },
+          {
+            "allow_removing_field": true,
+            "field_name": "company",
+            "include_company_custom_instructions": false,
+            "include_ticket_custom_fields": false,
+            "search_company_by": [
+              "COMPANY_NAME",
+              "COMPANY_SITE_NAME",
+              "CONTACT_EMAIL",
+              "CONTACT_FULL_NAME"
+            ],
+            "use_custom_instructions": false
+          }
+        ],
+        "move_to_board": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "8376ef8e-8835-4796-b5ba-70c961db0a07",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": null,
+          "new_status": null
+        },
+        "allow_removing_fields": true,
+        "update_additional_fields": false
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "22504",
+  "integrations": null,
+  "name": "(v.1.0) dark-web-alert-triage",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "TRIGGERED",
+  "version_timestamp": "2026-06-26T22:45:25.356859Z"
+}

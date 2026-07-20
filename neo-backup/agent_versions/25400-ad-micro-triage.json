@@ -1,0 +1,90 @@
+[
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "ad-micro-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-16T16:34:08.741840Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "ad-micro-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-08T21:36:00.468701Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "ad-micro-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-08T16:15:10.025253Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "ad-micro-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T20:28:50.695020Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "ad-micro-triage",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T17:56:14.423971Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "triage/router",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T17:52:43.647711Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "triage/router",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T17:42:53.503002Z"
+  },
+  {
+    "access": "ALL_USERS",
+    "audience": "MSP",
+    "autonomy_type": "CHAINED_ACTIONS",
+    "entity_type": "TICKET",
+    "id": "25400",
+    "name": "triage/router",
+    "state": "ENABLED",
+    "trigger_type": "TRIGGERED",
+    "version_timestamp": "2026-07-07T16:51:05.923351Z"
+  }
+]

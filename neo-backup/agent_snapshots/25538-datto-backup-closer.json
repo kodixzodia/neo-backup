@@ -1,0 +1,201 @@
+{
+  "access": "ALL_USERS",
+  "actions": [
+    {
+      "action_type": "UPDATE_TICKET_FIELDS",
+      "id": "0ce3c4bf-3333-4596-8b06-e4b8d50a51f7",
+      "input_as_dict": {
+        "additional_fields_to_update": {
+          "new_priority": null,
+          "new_queue": null,
+          "new_status": "Complete"
+        },
+        "allow_removing_fields": false,
+        "update_additional_fields": true
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    },
+    {
+      "action_type": "FIND_ENTITIES",
+      "id": "28da8dba-de5c-4985-9e1e-4b39c27436fb",
+      "input_as_dict": {
+        "opportunity_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "project_conditions": {
+          "conditions": {
+            "combinator": "or",
+            "rules": []
+          }
+        },
+        "result_entity_type": "TICKET",
+        "ticket_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": [
+              {
+                "combinator": "and",
+                "rules": [
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Canceled",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Complete",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Completed (With CSAT)",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "status",
+                    "id": null,
+                    "operator": "!=",
+                    "value": "Duplicate",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "010 Client Portal",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "020 Triage",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "100 SD-Issues",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "queueID",
+                    "id": null,
+                    "operator": "=",
+                    "value": "210 CS-Monitoring Alert",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "combinator": "or",
+                "rules": [
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Backup - Datto SIRIS",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Backup Verification",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Boot verification failed",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Bootable screenshot failed",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Datto Backup",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Datto SIRIS Backup",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "Datto SIRIS",
+                    "valueProviderInput": null
+                  },
+                  {
+                    "field": "title",
+                    "id": null,
+                    "operator": "contains",
+                    "value": "[Datto Backup]",
+                    "valueProviderInput": null
+                  }
+                ]
+              },
+              {
+                "field": "companyID",
+                "operator": "=",
+                "value": "FWI"
+              }
+            ]
+          },
+          "custom_field_conditions": null,
+          "workload_conditions": null
+        },
+        "time_entry_conditions": {
+          "conditions": {
+            "combinator": "and",
+            "rules": []
+          }
+        }
+      },
+      "output": {
+        "credits_consumed": 0
+      }
+    }
+  ],
+  "agent_settings": null,
+  "audience": "MSP",
+  "autonomy_type": "CHAINED_ACTIONS",
+  "entity_type": "TICKET",
+  "id": "25538",
+  "integrations": null,
+  "name": "datto-backup-closer",
+  "state": "ENABLED",
+  "toolbox": null,
+  "trigger_type": "SCHEDULED",
+  "version_timestamp": "2026-07-17T19:14:07.750745Z"
+}
